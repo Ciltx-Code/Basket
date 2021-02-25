@@ -27,5 +27,5 @@ switch ($btn){
 		break;
 }
 
-include "./vue/vueHello.php";
+include "./vue/vueAccueil.php";
 ?>

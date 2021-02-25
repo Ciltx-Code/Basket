@@ -60,3 +60,59 @@ input[type=text] {
 .container {
   padding: 16px;
 }
+
+
+/*=================================================*/
+@font-face{
+  font-family: "Evolve";
+  src:url('fonts/Evolve.otf');
+}
+
+@font-face{
+  font-family: "Sansation_Regular";
+  src: url('fonts/Sansation_Regular.ttf');
+}
+
+@font-face{
+  font-family: "Sansation_Light";
+  src: url('fonts/Sansation_Light.ttf');
+}
+
+body{
+  font-family: Evolve;
+  margin:0;
+  padding: 0;
+
+}
+a{
+  text-decoration: none;
+  color:black;
+}
+nav ul li{
+  display: inline-block;
+  clear: both;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+nav{
+  margin:auto;
+  width: 50%;
+  text-align: center;
+  font-size: 20px;
+
+}
+.accueil{
+  text-align: center;
+  display: block;
+  margin:auto;
+  margin-top: 5%;
+  margin-bottom: 33.5%;
+}
+.pied{
+  text-align: center;
+  display: block;
+  margin:auto;
+  width: 20%;
+  border:1px solid black;
+  border-radius: 50px;
+}
