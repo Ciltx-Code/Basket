@@ -6,7 +6,6 @@
 			<ul>
 				<li><a href="./">Accueil</a></li>
 				<li><a href="">Arbitres</a></li>
-				
 				<li><a href="index.php?action=categorie">Catégories</a></li>
 				
 				

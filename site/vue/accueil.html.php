@@ -12,7 +12,6 @@
 				<input type="text" id="email" placeholder="Votre Email" name="email" required><br/>
 				<label for="psw">
 					<strong>Mot de passe</strong>
-					
 				</label>
 				<input type="password" id="psw" placeholder="Votre Mot de passe" name="psw" required>
 				<button type="submit" class="btn">Connexion</button>
