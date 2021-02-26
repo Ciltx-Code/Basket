@@ -1,6 +1,6 @@
 <body>
 	<div class="entete">
-		<img src="../site/images/ffbb_icone.jpg">
+		<img href="../site" src="../site/images/ffbb_icone.jpg">
 
 		<nav>
 			<ul>

@@ -1,7 +1,4 @@
 	<div class="accueil">
 		<h1>Accueil</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere urna ac tellus sagittis ultricies.<br/>Proin elementum arcu et sapien ornare faucibus. Mauris varius lorem a ligula dapibus, sed congue purus porta. Pellentesque <br/>justo massa, blandit a ex ac, suscipit rutrum elit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus<br/> mus. Duis eu sodales lectus, et porttitor orci. Ut id auctor mi. Cras bibendum, turpis ullamcorper vehicula posuere, lorem felis<br/> iaculis sapien, luctus tempus augue leo sodales lectus.
-			<br/><br/>
-
-			Nulla tempus placerat nisl ut iaculis. Praesent lorem enim, pharetra vitae <br/>dignissim ac, placerat eu nisi. Duis hendrerit lectus nulla. Nulla aliquam ex ornare nunc convallis dictum. Cras efficitur, justo eu gravida ornare, neque mauris faucibus ipsum, a sodales purus nulla iaculis massa. Sed vel nunc venenatis, molestie nibh eget, gravida felis. Fusce venenatis sem lacus, et pulvinar neque eleifend in. Cras dapibus ex non orci viverra, at molestie est malesuada. Curabitur at quam in nunc consequat convallis a eu urna. Sed imperdiet velit eget ipsum blandit, non vestibulum leo egestas. Aliquam in nisi dictum, luctus sapien non, sollicitudin erat.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere urna ac tellus sagittis ultricies. Proin elementum arcu et sapien ornare faucibus. Mauris varius lorem a ligula dapibus, sed congue purus porta. Pellentesque justo massa, blandit a ex ac, suscipit rutrum elit.</p>
 	</div>
