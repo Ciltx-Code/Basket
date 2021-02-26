@@ -4,7 +4,7 @@
 
 		<nav>
 			<ul>
-				<li><a href="../">Accueil</a></li>
+				<li><a href="./">Accueil</a></li>
 				<li><a href="">Arbitres</a></li>
 				<li><a href="">Catégorie</a></li>
 				<li><a onclick="openForm()">Connexion</a></li>
