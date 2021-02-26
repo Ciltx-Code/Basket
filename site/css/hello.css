@@ -92,7 +92,14 @@ body{
 a{
   text-decoration: none;
   color:white;
+  background: linear-gradient(to top, rgba(255, 0, 0, 0.5) 10%, rgba(255, 0, 0, 0.5) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+  background-position: bottom -50px;
+  transition: background-size .5s;
 }
+a:hover{
+  background-size: 100% 100%;
+}
+
 nav ul li{
   display: inline-block;
   clear: both;
