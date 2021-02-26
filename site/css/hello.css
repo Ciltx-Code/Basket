@@ -21,13 +21,13 @@ input[type=text] {
 
 
 .initbtn {
-   background-color: #f44336;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 20%;
+ background-color: #f44336;
+ color: white;
+ padding: 14px 20px;
+ margin: 8px 0;
+ border: none;
+ cursor: pointer;
+ width: 20%;
 }
 
 .btn {
@@ -87,9 +87,13 @@ body{
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 100%;
-  background-image: url('../images/Background.png')
+  filter: blur(0px);
+  background-image: url('../images/Background.png');
+
+
 }
 .entete nav ul li a{
+  cursor: pointer;
   text-decoration: none;
   color:white;
   background: linear-gradient(to top, rgba(255, 0, 0, 0.5) 10%, rgba(255, 0, 0, 0.5) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
@@ -154,4 +158,60 @@ nav{
 }
 .entete .logo img{
   width: 100%;
+}
+/* Positionnez la forme Popup */
+.login-popup {
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+}
+/* Masquez la forme Popup */
+.form-popup {
+    display: none;
+    position: fixed;
+    left: 45%;
+    top:5%;
+    transform: translate(-45%,5%);
+    filter: blur(0px);
+}
+/* Styles pour le conteneur de la forme */
+.form-container {
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #666;
+    border-radius: 50px;
+}
+/* Largeur complète pour les champs de saisie */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #eee;
+}
+/* Quand les entrées sont concentrées, faites quelque chose */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+.form-container .btn {
+    background: linear-gradient(to right, #C645BB, #4AA9FE);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+.form-container .btn:active, .btn:focus{
+  outline-style: none;
+}
+.form-container .cancel {
+    background-color: #cc0000;
+}
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
 }

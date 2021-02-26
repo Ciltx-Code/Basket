@@ -6,6 +6,7 @@
 	<style type="text/css">
 		@import url("css/hello.css");
 	</style>
+	<script src="js/script.js"></script>
 	<link rel="icon" href="../site/images/icone.png" />
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
