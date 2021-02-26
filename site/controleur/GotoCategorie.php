@@ -26,6 +26,9 @@ switch ($btn){
 		
 		break;
 }
+include "./modele/bd_basket.php";
+
+$listeCategories = getCategories();
 
 include "./vue/vueCategorie.php";
 ?>
