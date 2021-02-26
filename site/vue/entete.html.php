@@ -1,5 +1,5 @@
 <body onload="preloadImages()">
-	<div class="entete">
+	<div class="entete" id="entete">
 		<a class="logo" href="../site"><img href="../site" src="../site/images/ffbb_icone.jpg"></a>
 
 		<nav>
