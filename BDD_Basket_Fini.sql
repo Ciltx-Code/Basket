@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 26 fév. 2021 à 17:37
+-- Généré le : ven. 26 fév. 2021 à 18:17
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.3.21
 
@@ -76,7 +76,7 @@ INSERT INTO `categorie` (`num_catégorie`, `nom_catégorie`, `montant_indemnité
 (1, 'U-15', '20'),
 (2, 'U-18', '20'),
 (3, 'U-20', '20'),
-(4, 'Senoir', '20');
+(4, 'Senior', '20');
 
 -- --------------------------------------------------------
 

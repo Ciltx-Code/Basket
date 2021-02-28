@@ -1,0 +1,78 @@
+1] Mon budget : Somme visée / maximum (enveloppe budgétaire totale)
+ 
+ 
+2] Mon achat :  
+ 
+Date : J'ai besoin de mon PC maintenant / dans une semaine / dans un mois /  ....
+E-magasin : Shop Hardware / TopAchat / LDLC / Materiel.net / Amazon / …
+Échelonnement : en 1x / 3x / 4x / …
+ 
+ 
+3] Mon / mes utilisation(s) prévue(s) : Jeux / Bureautique / xAO / Multimédia / Autres : préciser.
+Donnez quelques exemples de logiciels que vous devrez potentiellement utiliser, de jeux auxquels vous jouez à l’heure actuelle et jeux que vous prévoyez d’acheter.
+ 
+ 
+4] Mes attentes prioritaires : Silence / Dimension / Poid / Evolution / Thème (couleur)
+ 
+ 
+5] Quel design pour ma tour : Sobre / Agressif / Lumineux (LED) / Avec ou sans fenêtre
+ 
+ 
+6] Mon Overclock : Je sais comment optimiser mon processeur et/ou ma carte graphique ?
+Oui / Non / Plus d’info’ SVP
+ 
+ 
+7] Mon moniteur PC :
+ 
+Situation A :  J’ai déjà un écran : Sa diagonale est un 22" / 24" / 27" / 30" / 32” / …
+Sa définition : 1’920*1’080 [FHD] / 2’560*1’440 [QHD] / 3’840*2’160 [UHD] / …
+Sa fréquence : 60Hz / 75Hz / 120Hz / 144Hz / 165Hz / 180Hz / ...
+ 
+Situation B : Il faut en intégrer un nouvel écran dans la configuration.
+            De préférence, j'aimerai un écran 22" / 24" / 27" / 30" / 32” / …
+Indiquez la définition et la fréquence souhaitée ou faites savoir si vous laissez les bénévoles vous guider.
+ 
+ 
+8] Mon matériel :
+ 
+Pour les composant du PC :
+ 
+L'existant : Je possède / souhaite conserver : Carte-mère / Processeur / Ventirad / Carte graphique / SSD / Alimentation électrique / ...
+Le nécessaire Je veux / change : Carte-mère / Processeur / Ventirad / Carte graphique / SSD / Alimentation électrique / ...
+ 
+Pour les périphériques PC :
+ 
+L'existant : Je possède / souhaite conserver : Clavier / Souris / Enceintes / Système WiFi / Casque / ...
+Le nécessaire Je veux / change : Clavier / Souris / Enceintes / Système WiFi / Casque / ...
+ 
+ 
+9] Pour mon OS :
+ 
+Situation A : J'ai un Windows 7 / 8 / 8.1 / 10 / ...  | OEM / FPP / MàJ / VL /… | Info
+Situation B : Je n'ai pas Windows ! C'est à inclure dans le budget.
+ 
+ 
+10] Mes services :
+ 
+Montage PC : Allez vous le monter vous même ? Oui / Non / Plus d’info’ SVP (Service : ~40€)
+Instal’ de l’OS : Pouvez-vous installer l’OS vous même ? Oui / Non / Plus d’info’ (Service : ~30€)
+ 
+ 
+11] Mes composants supplémentaire :
+ 
+Lecteur CD: Oui / Non
+Nota Bene : peu utile aujourd'hui (jeux démat’)
+ 
+Carte Son: Oui / Non
+Remarque : chipset audio intégré, la carte est utile pour un audiophile / musicien.
+ 
+Système Wifi: Oui / Non
+Distance de la box ( même pièce / pièce à côté / éloigné) en mètre (1m / 5m / 25m / ...)
+ 
+Fiche CPL : Oui / Non
+ 
+Bande LEDs: Oui / Non
+ 
+ 
+12] Mon lieu de résidence : France / Corse / Dom Tom / Belgique / Suisse / Québec / etc... (Utile pour l'expédition, les frais de douane et le type de monnaie)
+

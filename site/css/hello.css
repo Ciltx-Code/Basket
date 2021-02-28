@@ -110,6 +110,15 @@ nav{
   width: 100%;
 
 }
+
+.popupFormCategorie{
+  display: none;
+  position: fixed;
+  left: 49%;
+  top:15%;
+  transform: translate(-45%,5%);
+  filter: blur(0px);
+}
 .form-popup {
   display: none;
   position: fixed;
@@ -163,26 +172,64 @@ nav{
   opacity: 1;
 }
 
-.categorie{
+.button_categorie{
+  display: flex;
+  justify-content: center;
   margin-bottom: 36%;
 }
-.categorie .btn {
+.button_categorie .btn {
   opacity: 0.8;
+  font-family: LouisGeorgeCafe;
   background: linear-gradient(to right, #C645BB, #4AA9FE);
   color: #fff;
-  padding: 12px 20px;
+  padding: 12px 7px;
   border-radius: 50px;
   cursor: pointer;
-  width: 12%;
   margin-bottom:10px;
+  margin-right: 20px;
+  margin-top: 7%;
 
 }
-.categorie .btn:active, .btn:focus{
+.button_categorie .btn:active, .btn:focus{
   outline-style: none;
 }
-.categorie .cancel {
+.button_categorie .cancel {
   background-color: #cc0000;
 }
-.categorie .btn:hover, .open-button:hover {
+.button_categorie .btn:hover, .open-button:hover {
   opacity: 1;
+}
+
+.categorie{
+  display: block;
+  margin: auto;
+  height: 350px;
+  border-radius: 10% 10% 10% 10%;
+  padding-top: 10px;
+  width: 30%;
+  background: linear-gradient(to bottom right, #C645BB, #4AA9FE);;
+}
+
+.table_categorie{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+
+.table_categorie table{
+  text-align: center;
+  color: black;
+  border-collapse: collapse;
+}
+
+.table_categorie tr{
+
+  min-height: 50px;
+}
+
+.table_categorie td{
+  padding: 7px;
+  border:2px solid #2B1367;
+
 }
