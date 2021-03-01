@@ -15,6 +15,7 @@
 }
 
 body{
+  float: none;
   font-family: Evolve;
   margin:0;
   padding: 0;
@@ -231,5 +232,4 @@ nav{
 .table_categorie td{
   padding: 7px;
   border:2px solid #2B1367;
-
 }
