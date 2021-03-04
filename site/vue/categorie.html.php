@@ -26,7 +26,7 @@
 
 		<div class="login-popup">
 			<div class="popupFormCategorie" id="popupFormCat">
-				<form action="index.php?action=enregistrercat" class="form-container" method="GET">
+				<form action="index.php?action=enregistrercat" class="form-container" method="get">
 					<h2>Veuillez entrer les informations suivantes :</h2>
 					<label for="nc">
 						<strong>Nom de catégorie</strong><br/>
@@ -36,7 +36,7 @@
 						<strong>Montant de l'indéminité</strong>
 					</label>
 					<input type="text" id="mtnindemnite" placeholder="Montant" name="mtnindemnite" required>
-					<?php echo "<a href='?action=enregistrercat&nomcategorie=".$_GET['nomcat']."&mtn=".$_GET['mtnindemnite'].'>';?>
+					<?php echo "<a href='?action=enregistrercat&nomcategorie=" . ['nomcat'] . "&mtn=" . $_GET['mtnindemnite'] . "'>";?>
 					<button type="button" class="btn">Enregistrer</button></a>
 
 					<button type="button" class="btn cancel" onclick="closeFormCategorie()">Annuler</button>
