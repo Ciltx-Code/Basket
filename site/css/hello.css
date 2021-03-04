@@ -102,12 +102,11 @@ nav{
 
 /*==========Pied==========*/
 .pied{
-  text-align: center;
+  width: 30%;
+  display: block;
   position: absolute;
-  left: 50%;
-  transform: translate(-50%);
+  text-align: center;
   vertical-align: bottom;
-  width: 25%;
   padding:5px;
   border-radius: 50px;
   margin-top: 2%;
@@ -202,7 +201,6 @@ nav{
   padding: 12px 7px;
   border-radius: 50px;
   cursor: pointer;
-  margin-bottom:10px;
   margin-right: 20px;
   margin-top: 7%;
 
@@ -232,19 +230,16 @@ nav{
 
 .table_categorie{
   margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2%;
 }
 
 .table_categorie table{
+  margin: auto;
   text-align: center;
   color: black;
   border-collapse: collapse;
 }
 
 .table_categorie tr{
-
   min-height: 50px;
 }
 
