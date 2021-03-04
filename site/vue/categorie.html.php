@@ -36,7 +36,8 @@
 						<strong>Montant de l'indéminité</strong>
 					</label>
 					<input type="text" id="mtnindemnite" placeholder="Montant" name="mtnindemnite" required>
-					<button type="submit" class="btn"><a href="?action=enregistrercat&nomcategorie=nomcat&mtn=mtnindemnite">Enregistrer</button>
+					<?php echo "<a href='?action=enregistrercat&nomcategorie=".$_GET['nomcat']."&mtn=".$_GET['mtnindemnite'].'>';?>
+					<button type="button" class="btn">Enregistrer</button></a>
 
 					<button type="button" class="btn cancel" onclick="closeFormCategorie()">Annuler</button>
 				</form>
