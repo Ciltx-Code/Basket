@@ -1,32 +1,37 @@
 <?php
+include "./modele/bd_basket.php";
+
 $btn = "Initialiser";
-if (isset($_POST["btn"])){
-	$btn = $_POST["btn"];
+if (isset($_GET["btn"])){
+	$btn = $_GET["btn"];
 }
+
 
 $message = "";
 $erreur = "";
 
 switch ($btn){
 	case "Initialiser" :
-		$_POST["nom"] = "";
+		$_GET['nomcat']="";
+		$_GET['mtnindemnite']="";
 		break;
 		
 	case "Enregistrer" :
-		if ( $_POST["nom"] == "" ){
+		/*if ( $_POST["nom"] == "" ){
 			$erreur = "Vous devez saisir un nom";
 		    break;
-		}
+		}*/
 		
 		//Enregistrer le nom dans la base de données ....
+		addCategorie($_GET['nomcat'], $_GET['mtnindemnite']);
+
+		$message = $_GET["nomcat"]. "a été enregistré";
 		
-		$message = $_POST["nom"]." a été enregistré";
-		
-		$_POST["nom"] = "";
+	
 		
 		break;
 }
-include "./modele/bd_basket.php";
+
 
 
 
