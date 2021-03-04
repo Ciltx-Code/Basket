@@ -6,6 +6,8 @@
 		<td>Nom de catégorie</td>
 		<td>Montant de l'indémnité</td></tr>";
 
+
+		$listeCategories = getCategories();
 		while($ligne = $listeCategories -> fetch(PDO::FETCH_OBJ)){
 			echo "<tr>";
 			echo "<td>$ligne->num_catégorie </td>";
@@ -24,7 +26,7 @@
 
 		<div class="login-popup">
 			<div class="popupFormCategorie" id="popupFormCat">
-				<form action="" class="form-container">
+				<form action="index.php?action=enregistrercat" class="form-container" method="GET">
 					<h2>Veuillez entrer les informations suivantes :</h2>
 					<label for="nc">
 						<strong>Nom de catégorie</strong><br/>
@@ -34,7 +36,8 @@
 						<strong>Montant de l'indéminité</strong>
 					</label>
 					<input type="text" id="mtnindemnite" placeholder="Montant" name="mtnindemnite" required>
-					<button type="button" action="addCategorie(nomcat, mtnindemnite)" class="btn">Enregistrer</button>
+					<button type="submit" class="btn"><a href="?action=enregistrercat&nomcategorie=nomcat&mtn=mtnindemnite">Enregistrer</button>
+
 					<button type="button" class="btn cancel" onclick="closeFormCategorie()">Annuler</button>
 				</form>
 			</div>
