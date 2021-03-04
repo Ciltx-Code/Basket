@@ -104,14 +104,13 @@ nav{
 .pied{
   text-align: center;
   position: absolute;
-  bottom: 0;
-  text-align: center;
   left: 50%;
   transform: translate(-50%);
-  margin-bottom: 10px;
+  vertical-align: bottom;
   width: 25%;
   padding:5px;
   border-radius: 50px;
+  margin-top: 2%;
   background: linear-gradient(to right, #C645BB, #4AA9FE);
 }
 
@@ -188,11 +187,14 @@ nav{
 /*==========Categorie==========*/
 
 .button_categorie{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 36%;
+  display: block;
+  margin:auto;
+  text-align: center;
+  padding-bottom: 15px;
+
 }
 .button_categorie .btn {
+  width: 25%;
   opacity: 0.8;
   font-family: LouisGeorgeCafe;
   background: linear-gradient(to right, #C645BB, #4AA9FE);
@@ -218,11 +220,14 @@ nav{
 .categorie{
   display: block;
   margin: auto;
-  height: 350px;
+  height: auto;
   border-radius: 10% 10% 10% 10%;
-  padding-top: 10px;
+  padding:10px 15px 0 15px;
   width: 30%;
   background: linear-gradient(to bottom right, #C645BB, #4AA9FE);;
+}
+#table_categorie{
+  filter: blur(0px);
 }
 
 .table_categorie{
@@ -246,5 +251,14 @@ nav{
 .table_categorie td{
   padding: 7px;
   border:2px solid #2B1367;
+}
+#blur{
+  filter: blur(0px);
+}
+#blur2{
+  filter: blur(0px);
+}
+#blur2{
+  filter: blur(0px);
 }
 /*=============================*/

@@ -6,6 +6,7 @@ function controleurPrincipal($action){
     $lesActions["hello"] = "hello.php";
     $lesActions["categorie"] = "GotoCategorie.php";
     $lesActions["enregistrercat"] = "../modele/bd_basket.php";
+    $lesActions["modifiercat"] = "../modele/bd_basket.php";
     
     if (array_key_exists ( $action , $lesActions )){
         return $lesActions[$action];
