@@ -21,5 +21,9 @@ include "./vue/accueil.html.php"
 <?php 
 include "./vue/pied.html.php";
 ?>
+
+<?php
+include "./vue/popup.html.php"
+?>
 </body>
 </html>
