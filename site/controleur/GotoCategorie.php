@@ -15,7 +15,7 @@ switch ($btn){
 	$_GET['nomcat']="";
 	$_GET['mtnindemnite']="";
 	break;
-	
+
 	case "Enregistrer" :
 		/*if ( $_POST["nom"] == "" ){
 			$erreur = "Vous devez saisir un nom";
@@ -27,11 +27,11 @@ switch ($btn){
 
 		$message = $_GET["nomcat"]. "a été enregistré";
 		header('Location: index.php?action=categorie');
-		
+
 		
 		break;
 
-		
+
 	}
 
 

@@ -52,6 +52,7 @@ function openFormCategorieModif() {
     document.getElementById("blur").style.filter="blur(2px)";
     document.getElementById("blur2").style.filter="blur(2px)";
     document.getElementById("blur3").style.filter="blur(2px)";
+
 }
 function closeFormCategorieModif() {
     document.getElementById("popupFormCatMod").style.display="none";
@@ -62,4 +63,15 @@ function closeFormCategorieModif() {
     document.getElementById("blur").style.filter="blur(0px)";
     document.getElementById("blur2").style.filter="blur(0px)";
     document.getElementById("blur3").style.filter="blur(0px)";
+}
+
+function getValueConfirm(){
+    var element = document.form.select;
+    for(var i = 0 ; i<element.length ; i++){
+        if(element[i].checked){
+            var check=element[i].value;
+            break;
+        }
+    }
+    console.log(check);
 }
