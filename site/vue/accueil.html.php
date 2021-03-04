@@ -4,7 +4,7 @@
 	</div>
 	<div class="login-popup">
 		<div class="form-popup" id="popupForm">
-			<form action="/action_page.php" class="form-container">
+			<form action="/verification.php" class="form-container" method="post" accept-charset='UTF-8'>
 				<h2>Veuillez vous connecter</h2>
 				<label for="email">
 					<strong>E-mail</strong><br/>

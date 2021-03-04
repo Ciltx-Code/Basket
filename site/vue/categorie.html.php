@@ -26,6 +26,11 @@
 
 		<div class="login-popup">
 			<div class="popupFormCategorie" id="popupFormCat">
+                <?php
+                    if((isset($_GET['nomcat'])&& !empty($_GET['nomcat'])) && (isset($_GET['mtnindemnite'])&& !empty($_GET['mtnindemnite']))) {
+                        
+                    } else {
+                ?>
 				<form action="index.php?action=enregistrercat" class="form-container" method="GET">
 					<h2>Veuillez entrer les informations suivantes :</h2>
 					<label for="nc">
@@ -36,11 +41,13 @@
 						<strong>Montant de l'indéminité</strong>
 					</label>
 					<input type="text" id="mtnindemnite" placeholder="Montant" name="mtnindemnite" required>
-					<?php echo "<a href='?action=enregistrercat&nomcategorie=".$_GET['nomcat']."&mtn=".$_GET['mtnindemnite'].'>';?>
+					<a href="?action=enregistrercat&nomcategorie=nomcat & mtn=mtnindemnite">
 					<button type="button" class="btn">Enregistrer</button></a>
-
 					<button type="button" class="btn cancel" onclick="closeFormCategorie()">Annuler</button>
 				</form>
+                <?php
+                    }
+                ?>
 			</div>
 
 		</div>
