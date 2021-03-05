@@ -29,14 +29,9 @@ function closeFormCategorie() {
 }
 
 function openFormCategorieModif() {
-    document.getElementById("popupFormCatMod").style.display="block";
-    document.body.style.backgroundImage="url('images/Blur_Background.png')";
-    document.getElementById("entete").style.filter="blur(2px)";
-    document.getElementById("pied").style.filter="blur(2px)";
-    document.getElementById("table_categorie").style.filter="blur(2px)";
-    document.getElementById("blur").style.filter="blur(2px)";
-    document.getElementById("blur2").style.filter="blur(2px)";
-    document.getElementById("blur3").style.filter="blur(2px)";
+    document.getElementById("popupFormCatModSuppr").style.display="block";
+    document.getElementById("background").style.filter="blur(2px)";
+    document.getElementById("popupFormCatModSuppr").style.filter="blur(0px)";
 
 }
 function closeFormCategorieModif() {

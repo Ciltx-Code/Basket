@@ -28,6 +28,10 @@
 	?>
 
 	<?php
+	include "./vue/popup_modif_suppr_categorie.html.php"
+	?>
+
+	<?php
 	include "./vue/popup_connexion.html.php"
 	?>
 </body>
