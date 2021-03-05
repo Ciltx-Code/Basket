@@ -1,5 +1,5 @@
 <?php
-include "./modele/bd_basket.php";
+include "./modele/bd_basket_categorie.php";
 
 $btn = "Initialiser";
 if (isset($_GET["btn"])){

@@ -1,5 +1,5 @@
 <?php
-include_once "bd_connexion.php";
+include"bd_connexion.php";
 
 function getCategories(){
 	try{
@@ -9,7 +9,7 @@ function getCategories(){
 
 		$resultat = $req;
 	} catch (PDOException $e) {
-		print("Erreur !: " . $e.getMessage());
+		print("Erreur !: " . $e->getMessage());
 		die();
 	}
 	return $resultat;

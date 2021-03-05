@@ -5,8 +5,8 @@
 		<nav>
 			<ul>
 				<li><a href="./">Accueil</a></li>
-				<li><a href="">Arbitres</a></li>
-				<li><a href="index.php?action=categorie">Catégories</a></li>
+				<li><a href="?action=arbitres">Arbitres</a></li>
+				<li><a href="?action=categorie">Catégories</a></li>
 				
 				
 				<li><a onclick="openForm()">Connexion</a></li>
