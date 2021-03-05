@@ -248,7 +248,7 @@ nav{
   border-radius: 10% 10% 10% 10%;
   padding:10px 15px 0 15px;
   width: 30%;
-  background: linear-gradient(to bottom right, #C645BB, #4AA9FE);;
+  background: linear-gradient(to bottom right, #C645BB, #4AA9FE);
 }
 #table_categorie{
   filter: blur(0px);
@@ -286,3 +286,38 @@ nav{
   filter: blur(0px);
 }
 /*=============================*/
+
+.lienInscription a{
+  color:black;
+}
+.inscription{
+  display: flex;
+  width: 30%;
+  margin: 5% auto 9.5% auto ;
+  max-width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border: 3px solid black;
+  border-radius: 50px;
+}
+.inscriptionForm fieldset{
+  border: none;
+}
+.inscriptionForm{
+  text-align: center;
+  margin: auto;
+}
+.boutonInscription{
+  background: linear-gradient(to right, #C645BB, #4AA9FE);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+.boutonInscription{
+  outline-style: none;
+}
+

@@ -24,7 +24,7 @@
 	?>
 
 	<?php
-	include "./vue/popup_connexion.html.php"
+	include "./vue/popup_connexion.html.php";
 	?>
 </body>
 </html>
