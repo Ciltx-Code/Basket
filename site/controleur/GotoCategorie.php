@@ -16,6 +16,10 @@ switch ($btn){
 	$_GET['mtnindemnite']="";
 	break;
 
+	case 'Modifier':
+		updateCategorie($_GET['NumCat'], $_GET['NomCat'], $_GET['MontantIndemnite']);
+		break;
+
 	case "Enregistrer" :
 		/*if ( $_POST["nom"] == "" ){
 			$erreur = "Vous devez saisir un nom";

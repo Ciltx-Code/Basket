@@ -28,21 +28,25 @@ function closeFormCategorie() {
     document.getElementById("background").style.filter="blur(0px)";
 }
 
-function openFormCategorieModif() {
+function openFormCategorieModif(nom, mtn) {
+    var element = document.form.select;
+    for(var i = 0 ; i<element.length ; i++){
+        if(element[i].checked){
+            var check=element[i].value;
+            break;
+        }
+    }
+    document.getElementById('nomcat1').value=nom;
+    document.getElementById('mtnindemnite1').value=mtn;
+    document.getElementById('num').value=check;
     document.getElementById("popupFormCatModSuppr").style.display="block";
     document.getElementById("background").style.filter="blur(2px)";
     document.getElementById("popupFormCatModSuppr").style.filter="blur(0px)";
 
 }
 function closeFormCategorieModif() {
-    document.getElementById("popupFormCatMod").style.display="none";
-    document.body.style.backgroundImage="url('images/Background.png')";
-    document.getElementById("entete").style.filter="blur(0px)";
-    document.getElementById("pied").style.filter="blur(0px)";
-    document.getElementById("table_categorie").style.filter="blur(0px)";
-    document.getElementById("blur").style.filter="blur(0px)";
-    document.getElementById("blur2").style.filter="blur(0px)";
-    document.getElementById("blur3").style.filter="blur(0px)";
+    document.getElementById("popupFormCatModSuppr").style.display="none";
+    document.getElementById("background").style.filter="blur(0px)";
 }
 
 function getValueConfirm(){

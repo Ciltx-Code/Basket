@@ -4,17 +4,19 @@
 		<form action="" class="form-container" method="GET">
 			<h2>Veuillez modifier les informations suivantes :</h2>
 			<input type="hidden" name="action" value="categorie">
+			<input type="hidden"id="num" name="NumCat" value="">
 			<label for="nc">
 				<strong>Nom de catégorie</strong><br/>
 			</label>
-			<input type="text" id="nomcat" value="<?php echo $_GET['nomcat']; ?>" placeholder="Nom de categorie" name="nomcat" required><br/>
+			<input type="text" id="nomcat1" value="" placeholder="Nom de categorie" name="NomCat" required><br/>
 			<label for="mtn">
 				<strong>Montant de l'indéminité</strong>
 			</label>
-			<input type="text" id="mtnindemnite" value="<?php echo $_GET['mtnindemnite']; ?>" placeholder="Montant" name="mtnindemnite" required>
+			<input type="text" id="mtnindemnite1" placeholder="Montant" name="MontantIndemnite" required>
 
-			<input type="submit" name="btn" class="btn" value="Enregistrer">
-			<input type="button" class="btn cancel" value="Annuler" onclick="closeFormCategorie()">
+			<input type="submit" name="btn" class="btn" value="Modifier">
+			<input type="button" name="btn" class="btn" value="Supprimer">
+			<input type="button" class="btn cancel" value="Annuler" onclick="closeFormCategorieModif()">
 		</form>
 	</div>
 </div>

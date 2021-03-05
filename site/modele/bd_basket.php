@@ -1,9 +1,5 @@
 <?php
 include_once "bd_connexion.php";
-if($_GET['action']=="enregistrercat"){
-	addCategorie($_GET['nomcategorie'], $_GET['mtn']);
-	echo "test";
-}
 
 function getCategories(){
 	try{
@@ -57,7 +53,7 @@ function addCategorie($NomCat, $MontantIndemnite){
 function updateCategorie($NumCat, $NomCat, $MontantIndemnite){
 	try{
 		$cnx = connexionPDO();
-		$req = $cnx->prepare("UPDATE categorie SET numcategorie =? , nomcategorie = ?, montantindemnite = ?");
+		$req = $cnx->prepare("UPDATE categorie SET num_catégorie =? , nom_catégorie = ?, montant_indemnité = ?");
 		$req->bindValue(1, $NumCat);
 		$req->bindValue(2, $NomCat);
 		$req->bindValue(3, $MontantIndemnite);
@@ -65,7 +61,7 @@ function updateCategorie($NumCat, $NomCat, $MontantIndemnite){
 
 		$resultat = $req;
 	}catch (PDOException $e) {
-		print("Erreur !: " . $e.getMessage());
+		print("Erreur !: " . $e->getMessage());
 		die();
 	}
 	return $resultat;
