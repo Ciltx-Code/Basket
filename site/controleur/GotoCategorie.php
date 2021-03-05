@@ -17,10 +17,12 @@ switch ($btn){
 	break;
 	case "Supprimer":
 		delCategorie($_GET['NumCat']);
+		header('Location: index.php?action=categorie');
 		break;
 
 	case 'Modifier':
 		updateCategorie($_GET['NumCat'], $_GET['NomCat'], $_GET['MontantIndemnite']);
+		header('Location: index.php?action=categorie');
 		break;
 
 	case "Enregistrer" :
