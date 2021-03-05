@@ -176,6 +176,13 @@ nav{
   border: none;
   background: #eee;
 }
+.form-container input[type=email] {
+  width: 93%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #eee;
+}
 .form-container input[type=password]{
   width: 93%;
   padding: 10px;
@@ -183,7 +190,7 @@ nav{
   border: none;
   background: #eee;
 }
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+.form-container input[type=text]:focus, .form-container input[type=password]:focus, .form-container input[type=email]:focus {
   background-color: #ddd;
   outline: none;
 }

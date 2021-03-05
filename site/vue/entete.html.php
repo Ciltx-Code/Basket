@@ -4,12 +4,26 @@
 
 		<nav>
 			<ul>
-				<li><a href="./">Accueil</a></li>
-				<li><a href="?action=arbitres">Arbitres</a></li>
-				<li><a href="?action=categorie">Catégories</a></li>
-				
-				
-				<li><a onclick="openForm()">Connexion</a></li>
+                <?php
+                session_start( ) ;
+                echo $_SESSION["id"];
+                if(isset($_SESSION["id"])){
+                ?>
+                    <li>Bienvenue <?php echo $_SESSION["id"]?></li>
+                    <li><a href="./">Accueil</a></li>
+                    <li><a href="?action=arbitres">Arbitres</a></li>
+                    <li><a href="?action=categorie">Catégories</a></li>
+                    <li><a>Deconnexion</a></li>
+                    <?php
+                }else{
+                ?>
+                    <li><a href="./">Accueil</a></li>
+                    <li><a href="?action=arbitres">Arbitres</a></li>
+                    <li><a href="?action=categorie">Catégories</a></li>
+                    <li><a onclick="openForm()">Connexion</a></li>
+                <?php
+                }
+                ?>
 			</ul>
 		</nav>
 	</div>

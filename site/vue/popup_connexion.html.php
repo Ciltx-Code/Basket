@@ -1,6 +1,7 @@
+
 <div class="login-popup" id="login-popup">
     <div class="form-popup" id="popupForm">
-        <form action="/verification.php" class="form-container" method="post" accept-charset='UTF-8'>
+        <form action="#" class="form-container" method="post" accept-charset='UTF-8'>
             <h2>Veuillez vous connecter</h2>
             <label for="email">
                 <strong>E-mail</strong><br/>
@@ -11,7 +12,7 @@
             </label>
             <input type="password" id="psw" placeholder="Votre Mot de passe" name="psw" required>
             <p>Vous n'êtes pas inscrit? Rendez-vous <a class="lienInscription" href="index.php?action=inscription">ici</a></p>
-            <button type="submit" class="btn">Connexion</button>
+            <button type="submit" name="btn" value="connexion" class="btn">Connexion</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
         </form>
     </div>
