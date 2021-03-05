@@ -290,6 +290,19 @@ nav{
 .lienInscription a{
   color:black;
 }
+.ConfirmInscription{
+  text-align: center;
+  margin: auto;
+  background-color: white;
+  border-radius: 50px;
+}
+.ConfirmInscription p{
+  font-size: 1.25em;
+  margin-top: -5% ;
+}
+.ConfirmInscription a{
+  color:black;
+}
 .inscription{
   display: flex;
   width: 30%;

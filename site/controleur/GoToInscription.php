@@ -16,10 +16,10 @@ switch ($btn) {
         $_POST['naissance'] = "";
         break;
 
-    case "Inscription" :
+    case "S'inscrire" :
         insertUser($_POST['pwd'], $_POST['mail'],$_POST['nom'],$_POST['prenom'],$_POST['naissance']);
         $message = $_POST["nom"]. $_POST['prenom'] . "a été enregistré";
-        header('Location: index.php');
+
         break;
 }
 
