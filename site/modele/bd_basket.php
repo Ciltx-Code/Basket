@@ -70,13 +70,13 @@ function updateCategorie($NumCat, $NomCat, $MontantIndemnite){
 function delCategorie($NumCat){
 	try{
 		$cnx = connexionPDO();
-		$req = $cnx->prepare("DELETE FROM categorie WHERE numcategorie=?");
+		$req = $cnx->prepare("DELETE FROM categorie WHERE num_catégorie=?");
 		$req->bindValue(1, $NumCat);
 		$req->execute();
 
 		$resultat = $req;
 	}catch (PDOException $e) {
-		print("Erreur !: " . $e.getMessage());
+		print("Erreur !: " . $e->getMessage());
 		die();
 	}
 	return $resultat;

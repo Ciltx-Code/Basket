@@ -15,7 +15,7 @@
 			<input type="text" id="mtnindemnite1" placeholder="Montant" name="MontantIndemnite" required>
 
 			<input type="submit" name="btn" class="btn" value="Modifier">
-			<input type="button" name="btn" class="btn" value="Supprimer">
+			<input type="submit" name="btn" class="btn" value="Supprimer">
 			<input type="button" class="btn cancel" value="Annuler" onclick="closeFormCategorieModif()">
 		</form>
 	</div>

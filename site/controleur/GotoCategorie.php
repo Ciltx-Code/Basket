@@ -15,6 +15,9 @@ switch ($btn){
 	$_GET['nomcat']="";
 	$_GET['mtnindemnite']="";
 	break;
+	case "Supprimer":
+		delCategorie($_GET['NumCat']);
+		break;
 
 	case 'Modifier':
 		updateCategorie($_GET['NumCat'], $_GET['NomCat'], $_GET['MontantIndemnite']);
