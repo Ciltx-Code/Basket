@@ -10,20 +10,21 @@
 	<link rel="icon" href="../site/images/icone.png" />
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
-<?php 
-include "./vue/entete.html.php";
-?>
+<body>
+	<?php 
+	include "./vue/entete.html.php";
+	?>
 
-<?php
-include "./vue/accueil.html.php"
-?>
+	<?php
+	include "./vue/accueil.html.php"
+	?>
 
-<?php 
-include "./vue/pied.html.php";
-?>
+	<?php 
+	include "./vue/pied.html.php";
+	?>
 
-<?php
-include "./vue/popup.html.php"
-?>
+	<?php
+	include "./vue/popup_connexion.html.php"
+	?>
 </body>
 </html>

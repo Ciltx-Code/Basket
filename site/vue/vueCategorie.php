@@ -22,5 +22,13 @@
 	<?php
 	include "./vue/pied.html.php"
 	?>
+
+	<?php
+	include "./vue/popup_add_categorie.html.php"
+	?>
+
+	<?php
+	include "./vue/popup_connexion.html.php"
+	?>
 </body>
 </html>
