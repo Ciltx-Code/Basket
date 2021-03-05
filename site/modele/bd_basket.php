@@ -53,10 +53,10 @@ function addCategorie($NomCat, $MontantIndemnite){
 function updateCategorie($NumCat, $NomCat, $MontantIndemnite){
 	try{
 		$cnx = connexionPDO();
-		$req = $cnx->prepare("UPDATE categorie SET num_catégorie =? , nom_catégorie = ?, montant_indemnité = ?");
-		$req->bindValue(1, $NumCat);
-		$req->bindValue(2, $NomCat);
-		$req->bindValue(3, $MontantIndemnite);
+		$req = $cnx->prepare("UPDATE categorie SET nom_catégorie = ?, montant_indemnité = ? WHERE num_catégorie =?");
+		$req->bindValue(1, $NomCat);
+		$req->bindValue(2, $MontantIndemnite);
+		$req->bindValue(3, $NumCat);
 		$req->execute();
 
 		$resultat = $req;
