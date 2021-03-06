@@ -6,7 +6,7 @@
 			<ul>
                 <?php
                 session_start( ) ;
-                echo $_SESSION["id"];
+                //echo $_SESSION["id"];
                 if(isset($_SESSION["id"])){
                 ?>
                     <li>Bienvenue <?php echo $_SESSION["id"]?></li>

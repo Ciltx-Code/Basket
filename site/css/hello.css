@@ -213,6 +213,7 @@ nav{
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
 /*=============================*/
 
 /*==========Categorie==========*/
@@ -313,7 +314,7 @@ nav{
 .inscription{
   display: flex;
   width: 30%;
-  margin: 5% auto 9.5% auto ;
+  margin: 5% auto 5% auto ;
   max-width: 300px;
   padding: 20px;
   background-color: #fff;
@@ -326,6 +327,20 @@ nav{
 .inscriptionForm{
   text-align: center;
   margin: auto;
+
+}
+
+.inscriptionForm input[type=text], .inscriptionForm input[type=email], .inscriptionForm input[type=password], .inscriptionForm input[type=date]{
+  width: 93%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  border: none;
+  background: #eee;
+}
+
+.inscriptionForm input[type=text]:focus, .inscriptionForm input[type=email]:focus, .inscriptionForm input[type=password]:focus, .inscriptionForm input[type=date]:focus{
+  background-color: #ddd;
+  outline: none;
 }
 .boutonInscription{
   background: linear-gradient(to right, #C645BB, #4AA9FE);

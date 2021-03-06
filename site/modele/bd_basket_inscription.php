@@ -14,7 +14,7 @@
             $req->execute();
             $resultat = $req;
         } catch (PDOException $e) {
-            print("Erreur !: " . $e.getMessage());
+            print("Erreur !: " . $e->getMessage());
             die();
         }
         return $resultat;
