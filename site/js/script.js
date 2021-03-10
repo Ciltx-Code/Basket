@@ -7,7 +7,7 @@ function openForm() {
     document.getElementById("popupForm").style.display="block";
     document.getElementById("background").style.filter="blur(2px)";
     document.getElementById("popupForm").style.filter="blur(0px)";
-
+    document.getElementById("entete").style.pointerEvents="none";
 }
 
 function closeForm() {
