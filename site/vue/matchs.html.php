@@ -1,8 +1,8 @@
 <div class="arbitres">
 	<?php
 
-	echo "<div class='table_categorie' id='table_categorie'><table> <tr> 
-	<td>Numéro de match</td>
+	echo "<div class='table_categorie' id='table_categorie'><table> <tr>
+	<td></td> 
 	<td>Adresse de la salle</td>
 	<td>Date du match</td>
 	<td>Heure du match</td>
@@ -13,7 +13,9 @@
 
 	while($ligne = $listeMatchs -> fetch(PDO::FETCH_OBJ)){
 		echo "<tr>";
-		echo "<td>$ligne->num_match</td>";
+		echo "<tr>";?>
+		<td><input type='radio' name='select' value="<?php echo($ligne->num_match);?>"></td>
+		<?php
 		echo "<td>$ligne->adresse_salle</td>";
 		echo "<td>$ligne->date_match</td>";
 		echo "<td>$ligne->heure_match</td>";
