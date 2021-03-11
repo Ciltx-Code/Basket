@@ -3,42 +3,34 @@ $btn = "Initialiser";
 if (isset($_POST["btn"])){
 	$btn = $_POST["btn"];
 }
+include "./modele/bd_basket_connexion.php";
 
 $message = "";
 $erreur = "";
 
 switch ($btn){
 	case "Initialiser" :
-		$_POST["nom"] = "";
-		break;
-		
+	$_POST["nom"] = "";
+	break;
+
 	case "Enregistrer" :
-		if ( $_POST["nom"] == "" ){
-			$erreur = "Vous devez saisir un nom";
-		    break;
-		}
-		
-		//Enregistrer le nom dans la base de données ....
-		
-		$message = $_POST["nom"]." a été enregistré";
-		
-		$_POST["nom"] = "";
-		
+	if ( $_POST["nom"] == "" ){
+		$erreur = "Vous devez saisir un nom";
 		break;
+	}
+
+		//Enregistrer le nom dans la base de données ....
+
+	$message = $_POST["nom"]." a été enregistré";
+
+	$_POST["nom"] = "";
+
+	break;
 
 	case "connexion" :
-        if (EMPTY($_GET["email"] == "" )){
-            $erreur = "Vous devez saisir un email";
-            break;
-        }
-        if(EMPTY($_GET["pwd"])==""){
-            $erreur="Vous devez saisir un mot de passe";
-        }
+		login($_POST["email"],$_POST["psw"]);
 
-        if($erreur=""){
-            login($_GET["mail"],$_POST["pwd"]);
-        }
-        break;
+	break;
 }
 
 include "./vue/vueAccueil.php";
