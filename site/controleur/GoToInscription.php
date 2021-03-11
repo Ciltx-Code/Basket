@@ -21,6 +21,7 @@ switch ($btn) {
         $message = $_POST["nom"]. $_POST['prenom'] . "a été enregistré";
 
         break;
+
 }
 
 

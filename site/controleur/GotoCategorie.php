@@ -1,6 +1,5 @@
 <?php
 include "./modele/bd_basket_categorie.php";
-
 $btn = "Initialiser";
 if (isset($_GET["btn"])){
 	$btn = $_GET["btn"];
@@ -36,11 +35,7 @@ switch ($btn){
 
 		$message = $_GET["nomcat"]. "a été enregistré";
 		header('Location: index.php?action=categorie');
-
-		
 		break;
-
-
 	}
 
 

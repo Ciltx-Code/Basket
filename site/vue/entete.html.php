@@ -5,7 +5,6 @@
 		<nav>
 			<ul>
                 <?php
-                session_start();
                 if(isset($_SESSION["id"])){
                     ?>
                     <li><a href="./">Accueil</a></li>
@@ -15,7 +14,7 @@
                         <ul class="sous">
                             <li><a>Mon profil</a></li><br>
                             <li><a>Paramètres</a></li><br>
-                            <li><a>Déconnexion</a></li>
+                            <li onclick="<?php session_destroy();?>"><a href="./">Déconnexion</a></li>
                         </ul>
                     </li>
                     <?php
