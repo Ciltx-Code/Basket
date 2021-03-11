@@ -5,10 +5,11 @@
 		<nav>
 			<ul>
                 <?php
+                session_start();
                 if(isset($_SESSION["id"])){
                     ?>
                     <li><a href="./">Accueil</a></li>
-                    <li><a href="?action=arbitres">Arbitres</a></li>
+                    <li><a href="?action=matchs">Matchs</a></li>
                     <li><a href="?action=categorie">Catégories</a></li>
                     <li class="deroulant" id="user"><?php echo $_SESSION["username"]; ?>
                         <ul class="sous">

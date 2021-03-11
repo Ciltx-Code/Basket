@@ -7,13 +7,14 @@ function openForm() {
     document.getElementById("popupForm").style.display="block";
     document.getElementById("background").style.filter="blur(2px)";
     document.getElementById("popupForm").style.filter="blur(0px)";
-    document.getElementById("entete").style.pointerEvents="none";
+    document.body.style.pointerEvents="none";
+    document.getElementById("popupForm").style.pointerEvents="all";
 }
 
 function closeForm() {
     document.getElementById("popupForm").style.display="none";
     document.getElementById("background").style.filter="blur(0px)";
-
+    document.body.style.pointerEvents="all";
 }
 
 function openFormMatch(){
