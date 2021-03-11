@@ -16,6 +16,18 @@ function closeForm() {
 
 }
 
+function openFormMatch(){
+    document.getElementById("popupFormMatch").style.display="block";
+    document.getElementById("background").style.filter="blur(2px)";
+    document.getElementById("popupFormMatch").style.filter="blur(0px)";
+}
+
+function closeFormMatch(){
+    document.getElementById("popupFormMatch").style.display="none";
+    document.getElementById("background").style.filter="blur(0px)";
+}
+
+
 function openFormCategorie() {
     document.getElementById("popupFormCat").style.display="block";
     document.getElementById("background").style.filter="blur(2px)";

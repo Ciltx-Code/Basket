@@ -9,7 +9,7 @@
                 ?>
                     <li>Bienvenue <?php echo $_SESSION["username"]?></li>
                     <li><a href="./">Accueil</a></li>
-                    <li><a href="?action=arbitres">Arbitres</a></li>
+                    <li><a href="?action=matchs">Matchs</a></li>
                     <li><a href="?action=categorie">Catégories</a></li>
                     <li><?php echo $_SESSION["username"]; ?>
                         <ul>
@@ -22,7 +22,7 @@
                 }else{
                 ?>
                     <li><a href="./">Accueil</a></li>
-                    <li><a href="?action=arbitres">Arbitres</a></li>
+                    <li><a href="?action=matchs">Matchs</a></li>
                     <li><a href="?action=categorie">Catégories</a></li>
                     <li><a onclick="openForm()">Connexion</a></li>
                 <?php

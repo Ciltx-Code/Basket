@@ -2,12 +2,12 @@
 	<?php
 
 	echo "<div class='table_categorie' id='table_categorie'><table> <tr> 
-			<td>Numéro de match</td>
-			<td>Adresse de la salle</td>
-			<td>Date du match</td>
-			<td>Heure du match</td>
-			<td>Montant Déplacement Arbitre 1</td>
-			<td>Montant Déplacement Arbitre 2</td></tr>";
+	<td>Numéro de match</td>
+	<td>Adresse de la salle</td>
+	<td>Date du match</td>
+	<td>Heure du match</td>
+	<td>Montant Déplacement Arbitre 1</td>
+	<td>Montant Déplacement Arbitre 2</td></tr>";
 
 	$listeMatchs = getMatchs();
 
@@ -23,5 +23,8 @@
 	}
 	echo "</table></div>";
 	?>
+	<div class="button_categorie">
+		<button type="submit" id="blur" onclick="openFormMatch()" class="btn blur">Ajouter un match</button>
+	</div>
 
 </div>

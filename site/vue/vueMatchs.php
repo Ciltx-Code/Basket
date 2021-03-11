@@ -6,7 +6,7 @@
 	<style type="text/css">
 		@import url("css/hello.css");
 	</style>
-	<script src="js/script.js"></script>
+	<script src="./js/script.js"></script>
 	<link rel="icon" href="../site/images/icone.png" />
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
@@ -16,13 +16,16 @@
 	?>
 
 	<?php
-	include "./vue/arbitres.html.php"
+	include "./vue/matchs.html.php"
 	?>
 
 	<?php
 	include "./vue/pied.html.php"
 	?>
 
+	<?php
+	include "./vue/popup_add_match.html.php"
+	?>
 	
 
 	<?php

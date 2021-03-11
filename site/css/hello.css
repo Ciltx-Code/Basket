@@ -161,7 +161,7 @@ nav{
   filter: blur(0px);
 }
 .form-container {
-  max-width: 300px;
+  max-width: 500px;
   padding: 20px;
   background-color: #fff;
   border: 3px solid black;
@@ -212,7 +212,34 @@ nav{
   opacity: 1;
 }
 
+.popupFormMatch{
+  display: none;
+  position: fixed;
+  left: 49%;
+  transform: translate(-45%,5%);
+  filter: blur(0px);
+}
+.popupFormMatch label{
+  margin-left: 10px;
+  margin-right: 10px;  
+}
+.liste1{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 /*=============================*/
+
+/*==========Arbitres==========*/
+.arbitres{
+  display: block;
+  margin: auto;
+  height: auto;
+  border-radius: 25% 25% 20% 20%;
+  padding:10px 15px 0 15px;
+  width: 70%;
+  background: linear-gradient(to bottom right, #C645BB, #4AA9FE);
+}
 
 /*==========Categorie==========*/
 
