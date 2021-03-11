@@ -10,7 +10,7 @@
                     <li><a href="./">Accueil</a></li>
                     <li><a href="?action=matchs">Matchs</a></li>
                     <li><a href="?action=categorie">Catégories</a></li>
-                    <li class="deroulant" id="user"><?php echo $_SESSION["username"]; ?>
+                    <li class="deroulant fleche" id="user"><?php echo $_SESSION["username"]; ?>
                         <ul class="sous">
                             <li><a>Mon profil</a></li><br>
                             <li><a>Paramètres</a></li><br>
