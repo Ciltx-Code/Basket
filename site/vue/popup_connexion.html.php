@@ -1,7 +1,6 @@
-
 <div class="login-popup" id="login-popup">
     <div class="form-popup" id="popupForm">
-        <form action="#" class="form-container" method="post" accept-charset='UTF-8'>
+        <form action="" class="form-container" method="post" accept-charset='UTF-8'>
             <h2>Veuillez vous connecter</h2>
             <label for="email">
                 <strong>E-mail</strong><br/>

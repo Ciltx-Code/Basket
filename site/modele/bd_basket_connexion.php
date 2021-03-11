@@ -13,16 +13,17 @@ function login($mail,$passwd)
     $CheckConnexion = $connex->prepare("SELECT * FROM user WHERE mail_user=?");
     $CheckConnexion->bindValue(1, $mail);
     $CheckConnexion->execute();
+    $res = array();
+    while ($res = $CheckConnexion->fetch(PDO::FETCH_ASSOC)) {
 
-    while ($ligne = $CheckConnexion->fetch(PDO::FETCH_OBJ)) {
-
-        if (password_verify($passwd, $ligne->pwd_user)) {
-            echo 'OK';
-            $_SESSION["id"] = $ligne->id_user;
-            echo"test";
+        if (password_verify($passwd, $res["pwd_user"])) {
+            $_SESSION["username"] = $res["nom_user"];
+            $_SESSION["id"]= $res["id_user"];
         } else {
             echo 'ERREUR';
         }
     }
 }
+
+
 ?>
