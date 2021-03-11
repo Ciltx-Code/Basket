@@ -1,6 +1,3 @@
-<?php
-session_start( ) ;
-?>
 <div class="background" id="background">
 	<div class="entete" id="entete">
 		<a class="logo" href="../site"><img href="../site" src="../site/images/ffbb_icone.jpg"></a>
