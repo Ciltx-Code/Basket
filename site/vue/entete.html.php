@@ -6,16 +6,15 @@
 			<ul>
                 <?php
                 if(isset($_SESSION["id"])){
-                ?>
-                    <li>Bienvenue <?php echo $_SESSION["username"]?></li>
+                    ?>
                     <li><a href="./">Accueil</a></li>
-                    <li><a href="?action=matchs">Matchs</a></li>
+                    <li><a href="?action=arbitres">Arbitres</a></li>
                     <li><a href="?action=categorie">Catégories</a></li>
-                    <li><?php echo $_SESSION["username"]; ?>
-                        <ul>
-                            <li>Mon Profil</li>
-                            <li>Paramètres</li>
-                            <li>Deconnexion</li>
+                    <li class="deroulant" id="user"><?php echo $_SESSION["username"]; ?>
+                        <ul class="sous">
+                            <li><a>Mon profil</a></li><br>
+                            <li><a>Paramètres</a></li><br>
+                            <li><a>Déconnexion</a></li>
                         </ul>
                     </li>
                     <?php

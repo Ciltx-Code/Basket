@@ -68,7 +68,6 @@ nav{
   text-align: center;
   font-size: 20px;
 }
-
 .entete{
   display: inline-flex;
 }
@@ -77,6 +76,48 @@ nav{
 }
 .entete .logo img{
   width: 100%;
+}
+.entete nav ul li .deroulante ul::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+.sous{
+  display: none;
+  background: linear-gradient(to right, #C645BB, #4AA9FE);
+  border: 1px solid black;
+  position: absolute;
+  width: 10%;
+  z-index: 1000;
+  height: 10%;
+}
+nav > ul li:hover .sous{
+  display: block;
+}
+.sous li{
+  margin: auto;
+  width: 100%;
+  text-align: left;
+}
+.sous a{
+  text-align: left;
+  cursor: pointer;
+  text-decoration: none;
+  background: none;
+  transition: none;
+  filter: blur(0px);
+}
+.sous a:hover{
+  border-bottom: none;
+  background-color: RGBa(200,200,200,0.1);
+}
+.deroulant > li::after{
+  content:" ▼";
+  font-size: 12px;
+  z-index: 1;
+}
+#user{
+  color: white;
 }
 
 /*==========================*/
