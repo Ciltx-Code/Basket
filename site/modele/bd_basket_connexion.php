@@ -14,17 +14,12 @@ function login($mail,$passwd)
     $CheckConnexion->bindValue(1, $mail);
     $CheckConnexion->execute();
 
-    echo $passwd;
-
     if($ligne = $CheckConnexion->fetch(PDO::FETCH_OBJ)) {
       $psw = $ligne->pwd_user;
-      echo $psw;
       if (password_verify($passwd, $psw)) {
           $_SESSION["username"] = $ligne->nom_user;
           $_SESSION["id"]= $ligne->id_user;
-      } else {
-        echo 'ERREUR';
-    }
+      }
 }
 
 }
