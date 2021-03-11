@@ -25,6 +25,20 @@ switch ($btn){
 		$_POST["nom"] = "";
 		
 		break;
+
+	case "connexion" :
+        if (EMPTY($_GET["email"] == "" )){
+            $erreur = "Vous devez saisir un email";
+            break;
+        }
+        if(EMPTY($_GET["pwd"])==""){
+            $erreur="Vous devez saisir un mot de passe";
+        }
+
+        if($erreur=""){
+            login($_GET["mail"],$_POST["pwd"]);
+        }
+        break;
 }
 
 include "./vue/vueAccueil.php";
