@@ -1,11 +1,14 @@
 <?php
 
-include"./modele/bd_basket_arbitres.php";
-
 $btn = "Initialiser";
-if (isset($_GET["btn"])){
-	$btn = $_GET["btn"];
+if (isset($_POST["btn"])){
+	$btn = $_POST["btn"];
 }
+
+include('./modele/bd_connexion.php');
+include"./modele/bd_basket_arbitres.php";
+include "./modele/bd_basket_connexion.php";
+
 
 
 $message = "";
@@ -13,8 +16,8 @@ $erreur = "";
 
 switch ($btn){
 	case "Initialiser" :
-	$_GET['nomcat']="";
-	$_GET['mtnindemnite']="";
+	$_POST['nomcat']="";
+	$_POST['mtnindemnite']="";
 	break;
 	case "Supprimer":
 
@@ -25,13 +28,20 @@ switch ($btn){
 	break;
 
 	case "enregistrer" :
-		addMatch($_GET['choixSalle'],$_GET['date'],$_GET['heure'],$_GET['choixEquipe1'],$_GET['choixEquipe2'],$_GET['arbitre1'],$_GET['arbitre2'],$_GET['mtn1'],$_GET['mtn2']);
-		$message = $_GET["nomcat"]. "a été enregistré";
+		addMatch($_POST['choixSalle'],$_POST['date'],$_POST['heure'],$_POST['choixEquipe1'],$_POST['choixEquipe2'],$_POST['arbitre1'],$_POST['arbitre2'],$_POST['mtn1'],$_POST['mtn2']);
+		$message = $_POST["nomcat"]. "a été enregistré";
 		header('Location: index.php?action=matchs');
+	break;
+
+	case "connexion" :
+	login($_POST["email"],$_POST["psw"]);
+
 	break;
 
 
 }
 
 include "./vue/vueMatchs.php";
+
+
 ?>

@@ -1,5 +1,5 @@
 <?php
-include"bd_connexion.php";
+
 
 function getCategories(){
 	try{

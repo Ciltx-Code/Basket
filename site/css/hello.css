@@ -345,6 +345,7 @@ nav > ul li:hover .sous{
 }
 
 .table_categorie table{
+  margin-bottom: 25px;
   text-align: center;
   color: black;
   border-collapse: collapse;

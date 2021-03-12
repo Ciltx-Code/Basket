@@ -1,6 +1,5 @@
 <div class="arbitres">
     <?php
-    session_start();
     if(isset($_SESSION["id"])){
         echo "<div class='table_categorie' id='table_categorie'>
                 <table> 

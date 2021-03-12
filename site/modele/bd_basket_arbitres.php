@@ -1,5 +1,4 @@
 <?php
-include"bd_connexion.php";
 function getMatchs(){
 	try{
 		$cnx = connexionPDO();

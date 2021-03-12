@@ -11,7 +11,7 @@
             </label>
             <input type="password" id="psw" placeholder="Votre Mot de passe" name="psw" required>
             <p>Vous n'êtes pas inscrit? Rendez-vous <a class="lienInscription" href="index.php?action=inscription">ici</a></p>
-            <button type="submit" name="btn" value="connexion" class="btn">Connexion</button>
+            <input type="submit" name="btn" value="connexion" class="btn">
             <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
         </form>
     </div>

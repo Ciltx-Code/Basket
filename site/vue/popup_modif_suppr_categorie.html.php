@@ -1,7 +1,7 @@
 <div class="login-popup">
 	<div class="popupFormCategorieModifSuppr" id="popupFormCatModSuppr">
 
-		<form action="" class="form-container" method="GET">
+		<form action="" class="form-container" method="post">
 			<h2>Veuillez modifier les informations suivantes :</h2>
 			<input type="hidden" name="action" value="categorie">
 			<input type="hidden"id="num" name="NumCat" value="">

@@ -1,6 +1,7 @@
 		<div class="categorie">
 			
 			<?php
+
             if(isset($_SESSION["id"])){
 			echo "<div class='table_categorie' id='table_categorie'><table> <tr> 
 			<td>Selection</td>
@@ -9,7 +10,7 @@
 
 
 			$listeCategories = getCategories();
-			echo "<form name='form' method='get'>";
+			echo "<form name='form' method='post'>";
 			while($ligne = $listeCategories -> fetch(PDO::FETCH_OBJ)){
 				echo "<tr>";?>
 				<td><input type='radio' name='select' value="<?php echo($ligne->num_catégorie);?>" onclick="openFormCategorieModif('<?php echo($ligne->nom_catégorie); ?>', '<?php echo($ligne->montant_indemnité); ?>')"></td>
@@ -34,7 +35,7 @@
 
 
             $listeCategories = getCategories();
-            echo "<form name='form' method='get'>";
+            echo "<form name='form' method='post'>";
             while($ligne = $listeCategories -> fetch(PDO::FETCH_OBJ)){
                 echo "<tr>";?>
                 <?php
