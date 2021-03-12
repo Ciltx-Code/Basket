@@ -79,27 +79,17 @@ nav{
   width: 100%;
 }
 
-.fleche::after{
-  content:" ▼";
-}
-.entete nav ul li .deroulante ul li::after{
-  content:" ▼";
-  display: table;
-  clear: both;
-}
 .sous{
   display: none;
+  position: relative;
   background: linear-gradient(to right, #C645BB, #4AA9FE);
   border: 1px solid black;
-  position: absolute;
-  width: 7.5%;
-  z-index: 1000;
-  height: 10%;
-  align-items: center;
-  padding-top: 4px;
-  margin: 0;
+  
+  width: 90%;
+  height: 90%;
+  padding-top: 8px;
 }
-nav > ul li:hover .sous{
+nav > ul li:hover .deroulant{
   display: block;
 }
 .sous li{

@@ -12,23 +12,23 @@
                     <li><a href="./">Accueil</a></li>
                     <li><a href="?action=matchs">Matchs</a></li>
                     <li><a href="?action=categorie">Catégories</a></li>
-                    <li class="deroulant fleche" id="user"><?php echo $_SESSION["username"]; ?>
-                        <ul class="sous">
-                            <li><a>Mon profil</a></li><br>
-                            <li><a href="./modele/logout.php">Déconnexion</a></li>
+                    <li class="deroulant" id="user"><?php echo $_SESSION["username"]; ?></li>
 
-                        </ul>
-                    </li>
-                    <?php
-                }else{
-                ?>
-                    <li><a href="./">Accueil</a></li>
-                    <li><a href="?action=matchs">Matchs</a></li>
-                    <li><a href="?action=categorie">Catégories</a></li>
-                    <li><a onclick="openForm()">Connexion</a></li>
+                <div class="sous">
+                    <li><a>Mon profil</a></li><br>
+                    <li><a href="./modele/logout.php">Déconnexion</a></li>
+
+                </div>
                 <?php
-                }
+            }else{
                 ?>
-			</ul>
-		</nav>
-	</div>
+                <li><a href="./">Accueil</a></li>
+                <li><a href="?action=matchs">Matchs</a></li>
+                <li><a href="?action=categorie">Catégories</a></li>
+                <li><a onclick="openForm()">Connexion</a></li>
+                <?php
+            }
+            ?>
+        </ul>
+    </nav>
+</div>
