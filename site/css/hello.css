@@ -42,7 +42,7 @@ body{
 }
 
 /*==========Entete==========*/
-.entete a,.entete button{
+.entete nav a,.entete button{
   cursor: pointer;
   text-decoration: none;
   color:white;
@@ -52,7 +52,7 @@ body{
   transition: background-size 0.5s;
   filter: blur(0px);
 }
-.entete a:hover, .entete button:hover{
+.entete nav a:hover, .entete button:hover{
   background-size: 100% 100%;
 }
 
