@@ -72,3 +72,11 @@ function getValueConfirm(){
     }
     console.log(check);
 }
+
+function Afficher() {
+    if(document.getElementById("myDropdown").style.display=="block"){
+        document.getElementById("myDropdown").style.display="none";
+    } else {
+        document.getElementById("myDropdown").style.display="block";
+    }
+}

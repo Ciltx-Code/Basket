@@ -12,13 +12,11 @@
                     <li><a href="./">Accueil</a></li>
                     <li><a href="?action=matchs">Matchs</a></li>
                     <li><a href="?action=categorie">Catégories</a></li>
-                    <li class="deroulant" id="user"><?php echo $_SESSION["username"]; ?></li>
-
-                <div class="sous">
-                    <li><a>Mon profil</a></li><br>
-                    <li><a href="./modele/logout.php">Déconnexion</a></li>
-
-                </div>
+                    <li id="user"><button onclick="Afficher()" class="dropbtn" id="drop"> <?php echo $_SESSION["username"]; ?></button></li>
+                    <div id="myDropdown" class="dropdown-content" name="myDropdown">
+                        <a>Mon profil</a>
+                        <a href="./modele/logout.php">Déconnexion</a>
+                    </div>
                 <?php
             }else{
                 ?>

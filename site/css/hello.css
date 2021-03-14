@@ -42,17 +42,17 @@ body{
 }
 
 /*==========Entete==========*/
-.entete nav ul li a{
+.entete a,.entete button{
   cursor: pointer;
   text-decoration: none;
   color:white;
   background: linear-gradient(to top, rgba(255, 0, 0, 0.5) 10%, rgba(255, 0, 0, 0.5) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
   background-position: bottom -50px;
   background-position: center;
-  transition: background-size .5s;
+  transition: background-size 0.5s;
   filter: blur(0px);
 }
-.entete nav ul li a:hover{
+.entete a:hover, .entete button:hover{
   background-size: 100% 100%;
 }
 
@@ -79,47 +79,55 @@ nav{
   width: 100%;
 }
 
-.sous{
-  display: none;
-  position: relative;
-  background: linear-gradient(to right, #C645BB, #4AA9FE);
-  border: 1px solid black;
-  
-  width: 90%;
-  height: 90%;
-  padding-top: 8px;
-}
-nav > ul li:hover .deroulant{
-  display: block;
-}
-.sous li{
-  margin: auto;
-  width: 100%;
-  text-align: left;
-  padding: 2px;
-}
-.sous a{
-  text-align: left;
+.dropbtn {
+  background: inherit;
+  border: none;
+  font-family: Evolve;
+  margin:0;
+  padding: 0;
+  background-size: 100%;
   cursor: pointer;
-  text-decoration: none;
-  background: none;
-  transition: none;
-  filter: blur(0px);
-}
-.sous a:hover{
-  border-bottom: none;
-  background-color: RGBa(200,200,200,0.1);
-}
-.deroulant ul li::after{
-  content:"";
-  font-size: 12px;
-  z-index: 1;
-  cursor: pointer;
-}
-#user{
   color: white;
+  padding: 16px;
+  font-size: 1.15em;
+}
+.dropbtn:active, .dropbtn:focus{
+  outline-style: none;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.show {
+  display:block;
 }
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: inherit;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  margin-left: 33%;
+}
+#user:hover{
+  background-size: 100% 100%;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom:1px solid black ;
+}
+
+.dropdown-content a:hover{
+  background-color: RGBa(236,236,236,0.2);
+}
 /*==========================*/
 
 /*==========Accueil=========*/
