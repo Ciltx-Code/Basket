@@ -15,13 +15,11 @@
         $count = 0;
         while($ligne = $listeMatchs -> fetch(PDO::FETCH_OBJ)){
             $numsalle = getSalleByAdresse($ligne->adresse_salle);
-            $mtn1 = $ligne->montant_déplt_p;
-            $mtn2 = $ligne->montant_déplt_s;
             echo "<tr>";?>
             <td>
                 <input type='radio' name='select' 
                 value="<?php echo($ligne->num_match);?>"
-                onclick="openFormMatchModif('<?php echo($numsalle) ;?>', '<?php echo($ligne->date_match);?>', '<?php echo($ligne->heure_match);?>','<?php echo($ligne->num_equipe_1) ;?>','<?php echo($ligne->num_equipe_2) ;?>','<?php echo($mtn1);?>', '<?php echo($mtn2);?>')">
+                onclick="openFormMatchModif('<?php echo($numsalle) ;?>', '<?php echo($ligne->date_match);?>', '<?php echo($ligne->heure_match);?>','<?php echo($ligne->num_equipe_1) ;?>','<?php echo($ligne->num_equipe_2) ;?>','<?php echo($ligne->num_arbitre_p) ;?>','<?php echo($ligne->num_arbitre_s) ;?>','<?php echo($ligne->montant_déplt_p);?>','<?php echo($ligne->montant_déplt_s);?>')">
             </td>
             <?php
 

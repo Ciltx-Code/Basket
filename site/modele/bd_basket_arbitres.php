@@ -2,7 +2,7 @@
 function getMatchs(){
 	try{
 		$cnx = connexionPDO();
-		$req = $cnx->prepare("SELECT m.num_match, m.num_arbitre_p, m.num_arbitre_s, m.num_equipe_1, m.num_equipe_2, s.adresse_salle, m.date_match, m.heure_match, m.montant_déplt_p, m.montant_déplt_s FROM matchs m JOIN salle s ON m.num_salle = s.num_salle");	
+		$req = $cnx->prepare("SELECT m.num_match, m.num_arbitre_p, m.num_arbitre_s, m.num_equipe_1, m.num_equipe_2, s.adresse_salle, m.date_match, m.heure_match, m.montant_déplt_p, m.montant_déplt_s FROM matchs m JOIN salle s ON m.num_salle = s.num_salle ORDER BY m.num_match");	
 		$req->execute();
 
 		$resultat = $req;

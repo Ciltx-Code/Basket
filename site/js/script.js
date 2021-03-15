@@ -71,7 +71,6 @@ function Afficher() {
 }
 
 function openFormMatchModif(adresse, date, heure, equipe1, equipe2, arbitre1, arbitre2, mtn1, mtn2) {
-    alert(mtn1);
     document.getElementById('choixSalleMod').selectedIndex=adresse;
     document.getElementById('dateMod').value=date;
     document.getElementById('heureMod').value=heure;
