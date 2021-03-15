@@ -8,9 +8,10 @@
 	</style>
 	<script src="./js/script.js"></script>
 	<link rel="icon" href="../site/images/icone.png" />
-	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body>
+	
+
 	<?php
 	include "./vue/entete.html.php"
 	?>
@@ -26,7 +27,11 @@
 	<?php
 	include "./vue/popup_add_match.html.php"
 	?>
-	
+
+
+	<?php
+	include "./vue/popup_modif_suppr_matchs.html.php"
+	?>
 
 	<?php
 	include "./vue/popup_connexion.html.php"

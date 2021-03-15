@@ -1,6 +1,6 @@
 /*function preloadImages() {
-	document.body.style.backgroundImage="url('images/Blur_Background.png')";
-	document.body.style.backgroundImage="url('images/Background.png')";
+    document.body.style.backgroundImage="url('images/Blur_Background.png')";
+    document.body.style.backgroundImage="url('images/Background.png')";
 }*/
 
 function openForm() {
@@ -62,21 +62,31 @@ function closeFormCategorieModif() {
     document.getElementById("background").style.filter="blur(0px)";
 }
 
-function getValueConfirm(){
-    var element = document.form.select;
-    for(var i = 0 ; i<element.length ; i++){
-        if(element[i].checked){
-            var check=element[i].value;
-            break;
-        }
-    }
-    console.log(check);
-}
-
 function Afficher() {
     if(document.getElementById("myDropdown").style.display=="block"){
         document.getElementById("myDropdown").style.display="none";
     } else {
         document.getElementById("myDropdown").style.display="block";
     }
+}
+
+function openFormMatchModif(adresse, date, heure, equipe1, equipe2, arbitre1, arbitre2, mtn1, mtn2) {
+    alert(mtn1);
+    document.getElementById('choixSalleMod').selectedIndex=adresse;
+    document.getElementById('dateMod').value=date;
+    document.getElementById('heureMod').value=heure;
+    document.getElementById('choixEquipe1Mod').selectedIndex=equipe1;
+    document.getElementById('choixEquipe2Mod').selectedIndex=equipe2;
+    document.getElementById('choixArbitre1Mod').selectedIndex=equipe1;
+    document.getElementById('choixArbitre2Mod').selectedIndex=equipe2;
+    document.getElementById('mtn1Mod').value=mtn1;
+    document.getElementById('mtn2Mod').value=mtn2;
+    document.getElementById("popupFormMatchModSuppr").style.display="block";
+    document.getElementById("background").style.filter="blur(2px)";
+    document.getElementById("popupFormMatchModSuppr").style.filter="blur(0px)";
+}
+
+function closeFormMatchModif() {
+    document.getElementById("popupFormMatchModSuppr").style.display="none";
+    document.getElementById("background").style.filter="blur(0px)";
 }

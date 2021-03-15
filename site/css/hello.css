@@ -192,6 +192,19 @@ nav{
   filter: blur(0px);
 }
 
+.popupFormMatchModifSuppr{
+  display: none;
+  position: fixed;
+  left: 49%;
+  transform: translate(-45%,5%);
+  filter: blur(0px);
+}
+
+.popupFormMatchModifSuppr label{
+  margin-left: 10px;
+  margin-right: 10px;  
+}
+
 .popupFormCategorie{
   display: none;
   position: fixed;

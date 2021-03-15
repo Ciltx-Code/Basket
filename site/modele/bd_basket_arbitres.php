@@ -2,7 +2,7 @@
 function getMatchs(){
 	try{
 		$cnx = connexionPDO();
-		$req = $cnx->prepare("SELECT m.num_match, s.adresse_salle, m.date_match, m.heure_match, m.montant_déplt_p, m.montant_déplt_s FROM matchs m JOIN salle s ON m.num_salle = s.num_salle");
+		$req = $cnx->prepare("SELECT m.num_match, m.num_arbitre_p, m.num_arbitre_s, m.num_equipe_1, m.num_equipe_2, s.adresse_salle, m.date_match, m.heure_match, m.montant_déplt_p, m.montant_déplt_s FROM matchs m JOIN salle s ON m.num_salle = s.num_salle");	
 		$req->execute();
 
 		$resultat = $req;
@@ -81,11 +81,14 @@ function addMatch($salle, $date, $heure, $equipe1, $equipe2, $arbitre1, $arbitre
 function getSalleByAdresse($adresse){
     try{
         $cnx= connexionPDO();
-        $req= $cnx->prepare("SELECT num_salle where adresse_salle=?");
+        $req= $cnx->prepare("SELECT num_salle FROM salle where adresse_salle=?");
         $req->bindValue(1,$adresse);
         $req->execute();
+        while($ligne = $req -> fetch(PDO::FETCH_OBJ)){
+        	$resultat=$ligne->num_salle;
+        }
 
-        $resultat=$req;
+        
     }catch(PDOException $e){
         print("Erreur !: ". $e->getMessage());
         die();
@@ -99,8 +102,10 @@ function getEquipeById($numEquipe){
         $req = $cnx->prepare("SELECT * FROM equipe where num_equipe=?");
         $req -> bindValue(1,$numEquipe);
         $req->execute();
-
-        $resultat = $req;
+        while($ligne = $req -> fetch(PDO::FETCH_OBJ)){
+        	$resultat = $ligne->nom_equipe;
+        }
+        
     } catch (PDOException $e) {
         print("Erreur !: " . $e->getMessage());
         die();
@@ -114,8 +119,9 @@ function getArbitreById($numArbitre){
         $req = $cnx->prepare("SELECT * FROM arbitre where num_arbitre=?");
         $req->bindValue(1,$numArbitre);
         $req->execute();
-
-        $resultat = $req;
+        while($ligne = $req -> fetch(PDO::FETCH_OBJ)){
+        	$resultat = $ligne->nom_arbitre;
+        }
     } catch (PDOException $e) {
         print("Erreur !: " . $e->getMessage());
         die();
