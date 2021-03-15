@@ -42,7 +42,7 @@ body{
 }
 
 /*==========Entete==========*/
-.entete nav a,.entete button{
+.entete nav a, .entete nav p{
   cursor: pointer;
   text-decoration: none;
   color:white;
@@ -52,7 +52,7 @@ body{
   transition: background-size 0.5s;
   filter: blur(0px);
 }
-.entete nav a:hover, .entete button:hover{
+.entete nav a:hover, .entete nav p:hover{
   background-size: 100% 100%;
 }
 
@@ -88,7 +88,6 @@ nav{
   background-size: 100%;
   cursor: pointer;
   color: white;
-  padding: 16px;
   font-size: 1.15em;
 }
 .dropbtn:active, .dropbtn:focus{
