@@ -129,4 +129,41 @@ function getArbitreById($numArbitre){
     return $resultat;
 }
 
+function modifMatch($salle, $date, $heure, $equipe1, $equipe2, $arbitre1, $arbitre2, $mtn1, $mtn2){
+    try{
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("UPDATE matchs set num_salle=?, date_match=?, heure_match=?, num_equipe_1=?, num_equipe_2=?, num_arbitre_p=?, num_arbitre_s=?, montant_déplt_p=?, montant_déplt_s=?");
+        $req->bindValue(1, $salle);
+        $req->bindValue(2, $date);
+        $req->bindValue(3, $heure);
+        $req->bindValue(4, $equipe1);
+        $req->bindValue(5, $equipe2);
+        $req->bindValue(6, $arbitre1);
+        $req->bindValue(7, $arbitre2);
+        $req->bindValue(8, $mtn1);
+        $req->bindValue(9, $mtn2);
+        $req->execute();
+
+        $resultat = $req;
+    }catch (PDOException $e) {
+        print("Erreur !: " . $e->getMessage());
+        die();
+    }
+    return $resultat;
+}
+
+function deleteMatch($numMatch){
+    try{
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("DELETE FROM matchs WHERE num_match=?");
+        $req->bindValue(1, $numMatch);
+        $req->execute();
+
+        $resultat = $req;
+    }catch (PDOException $e) {
+        print("Erreur !: " . $e->getMessage());
+        die();
+    }
+    return $resultat;
+}
 ?>
