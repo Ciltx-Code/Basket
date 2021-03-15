@@ -78,4 +78,49 @@ function addMatch($salle, $date, $heure, $equipe1, $equipe2, $arbitre1, $arbitre
 	return $resultat;
 }
 
+function getSalleByAdresse($adresse){
+    try{
+        $cnx= connexionPDO();
+        $req= $cnx->prepare("SELECT num_salle where adresse_salle=?");
+        $req->bindValue(1,$adresse);
+        $req->execute();
+
+        $resultat=$req;
+    }catch(PDOException $e){
+        print("Erreur !: ". $e->getMessage());
+        die();
+    }
+    return $resultat;
+}
+
+function getEquipeById($numEquipe){
+    try{
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("SELECT * FROM equipe where num_equipe=?");
+        $req -> bindValue(1,$numEquipe);
+        $req->execute();
+
+        $resultat = $req;
+    } catch (PDOException $e) {
+        print("Erreur !: " . $e->getMessage());
+        die();
+    }
+    return $resultat;
+}
+
+function getArbitreById($numArbitre){
+    try{
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("SELECT * FROM arbitre where num_arbitre=?");
+        $req->bindValue(1,$numArbitre);
+        $req->execute();
+
+        $resultat = $req;
+    } catch (PDOException $e) {
+        print("Erreur !: " . $e->getMessage());
+        die();
+    }
+    return $resultat;
+}
+
 ?>
