@@ -37,8 +37,8 @@
             echo "<td>$equipe1</td>";
             echo "<td>$equipe2</td>";
             echo "<td>$arbitre1</td>";
-            echo "<td>$arbitre2</td>";
             echo "<td>$ligne->montant_déplt_p</td>";
+            echo "<td>$arbitre2</td>";
             echo "<td>$ligne->montant_déplt_s</td>";
             echo "</tr>";
             $count++;
