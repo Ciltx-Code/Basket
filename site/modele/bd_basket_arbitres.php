@@ -129,10 +129,10 @@ function getArbitreById($numArbitre){
     return $resultat;
 }
 
-function modifMatch($salle, $date, $heure, $equipe1, $equipe2, $arbitre1, $arbitre2, $mtn1, $mtn2){
+function modifMatch($salle, $date, $heure, $equipe1, $equipe2, $arbitre1, $arbitre2, $mtn1, $mtn2, $numMatch){
     try{
         $cnx = connexionPDO();
-        $req = $cnx->prepare("UPDATE matchs set num_salle=?, date_match=?, heure_match=?, num_equipe_1=?, num_equipe_2=?, num_arbitre_p=?, num_arbitre_s=?, montant_déplt_p=?, montant_déplt_s=?");
+        $req = $cnx->prepare("UPDATE matchs set num_salle=?, date_match=?, heure_match=?, num_equipe_1=?, num_equipe_2=?, num_arbitre_p=?, num_arbitre_s=?, montant_déplt_p=?, montant_déplt_s=? where num_match=?");
         $req->bindValue(1, $salle);
         $req->bindValue(2, $date);
         $req->bindValue(3, $heure);
@@ -142,6 +142,7 @@ function modifMatch($salle, $date, $heure, $equipe1, $equipe2, $arbitre1, $arbit
         $req->bindValue(7, $arbitre2);
         $req->bindValue(8, $mtn1);
         $req->bindValue(9, $mtn2);
+        $req->bindValue(10,$numMatch);
         $req->execute();
 
         $resultat = $req;
