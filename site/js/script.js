@@ -70,7 +70,7 @@ function Afficher() {
     }
 }
 
-function openFormMatchModif(adresse, date, heure, equipe1, equipe2, arbitre1, arbitre2, mtn1, mtn2) {
+function openFormMatchModif(adresse, date, heure, equipe1, equipe2, arbitre1, arbitre2, mtn1, mtn2, num) {
     document.getElementById('choixSalleMod').selectedIndex=adresse;
     document.getElementById('dateMod').value=date;
     document.getElementById('heureMod').value=heure;
@@ -80,6 +80,7 @@ function openFormMatchModif(adresse, date, heure, equipe1, equipe2, arbitre1, ar
     document.getElementById('choixArbitre2Mod').selectedIndex=equipe2;
     document.getElementById('mtn1Mod').value=mtn1;
     document.getElementById('mtn2Mod').value=mtn2;
+    document.getElementById('numMatch').value=num;
     document.getElementById("popupFormMatchModSuppr").style.display="block";
     document.getElementById("background").style.filter="blur(2px)";
     document.getElementById("popupFormMatchModSuppr").style.filter="blur(0px)";

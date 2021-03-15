@@ -4,6 +4,7 @@
 		<form action="" class="form-container" method="post">
 			<h2>Veuillez entrer les informations suivantes :</h2>
 			<input type="hidden" name="action" value="matchs">
+			<input type="hidden" id="numMatch" name="num" value="">
 			<label for="mtn">
 				<strong>Adresse de la salle</strong>
 			</label><br/>
@@ -92,7 +93,8 @@
 			</select><br/><br/>
 			<input type="text" name="mtn2" value="" id="mtn2Mod" placeholder="montant de l'indemnité">
 
-			<input type="submit" name="btn" class="btn" value="enregistrer">
+			<input type="submit" name="btn" class="btnmodifsuppr" value="Modifier">
+			<input type="submit" name="btn" class="btnmodifsuppr" value="Supprimer">
 			<input type="button" class="btn cancel" value="Annuler" onclick="closeFormMatchModif()">
 		</form>
 	</div>

@@ -27,7 +27,7 @@
             <td>
                 <input type='radio' name='select' 
                 value="<?php echo($ligne->num_match);?>"
-                onclick="openFormMatchModif('<?php echo($numsalle) ;?>', '<?php echo($ligne->date_match);?>', '<?php echo($ligne->heure_match);?>','<?php echo($ligne->num_equipe_1) ;?>','<?php echo($ligne->num_equipe_2) ;?>','<?php echo($ligne->num_arbitre_p) ;?>','<?php echo($ligne->num_arbitre_s) ;?>','<?php echo($ligne->montant_déplt_p);?>','<?php echo($ligne->montant_déplt_s);?>')">
+                onclick="openFormMatchModif('<?php echo($numsalle) ;?>', '<?php echo($ligne->date_match);?>', '<?php echo($ligne->heure_match);?>','<?php echo($ligne->num_equipe_1) ;?>','<?php echo($ligne->num_equipe_2) ;?>','<?php echo($ligne->num_arbitre_p) ;?>','<?php echo($ligne->num_arbitre_s) ;?>','<?php echo($ligne->montant_déplt_p);?>','<?php echo($ligne->montant_déplt_s);?>','<?php echo($ligne->num_match);?>')">
             </td>
             <?php
 

@@ -20,11 +20,11 @@ switch ($btn){
 	$_POST['mtnindemnite']="";
 	break;
 	case "Supprimer":
-
+	deleteMatch($_POST['num']);
 	break;
 
 	case 'Modifier':
-
+	modifMatch($_POST['choixSalle'], $_POST['date'], $_POST['heure'], $_POST['choixEquipe1'], $_POST['choixEquipe2'], $_POST['arbitre1'], $_POST['arbitre2'], $_POST['mtn1'], $_POST['mtn2'], $_POST['num']);
 	break;
 
 	case "enregistrer" :
@@ -37,6 +37,7 @@ switch ($btn){
 	login($_POST["email"],$_POST["psw"]);
 
 	break;
+
 
 
 }

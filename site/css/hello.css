@@ -199,6 +199,24 @@ nav{
   transform: translate(-45%,5%);
   filter: blur(0px);
 }
+.btnmodifsuppr{
+  background: linear-gradient(to right, #C645BB, #4AA9FE);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 49%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.btnmodifsuppr:active, .btnmodifsuppr:focus{
+  outline-style: none;
+}
+
+.btnmodifsuppr:hover, .btnmodifsuppr:hover {
+  opacity: 1;
+}
 
 .popupFormMatchModifSuppr label{
   margin-left: 10px;
