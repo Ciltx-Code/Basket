@@ -76,8 +76,8 @@ function openFormMatchModif(adresse, date, heure, equipe1, equipe2, arbitre1, ar
     document.getElementById('heureMod').value=heure;
     document.getElementById('choixEquipe1Mod').selectedIndex=equipe1;
     document.getElementById('choixEquipe2Mod').selectedIndex=equipe2;
-    document.getElementById('choixArbitre1Mod').selectedIndex=equipe1;
-    document.getElementById('choixArbitre2Mod').selectedIndex=equipe2;
+    document.getElementById('choixArbitre1Mod').selectedIndex=arbitre1;
+    document.getElementById('choixArbitre2Mod').selectedIndex=arbitre2;
     document.getElementById('mtn1Mod').value=mtn1;
     document.getElementById('mtn2Mod').value=mtn2;
     document.getElementById('numMatch').value=num;
@@ -92,20 +92,109 @@ function closeFormMatchModif() {
 }
 
 function disable(num){
-    console.log("test");
     switch(num){
         case 1:
         var input = document.getElementById('choixEquipe1').selectedIndex;
-        console.log(input);
-        var opts = sel.options;
+        var opts = document.getElementById('choixEquipe2').options;
         for (var opt, j = 0; opt = opts[j]; j++) {
             if (j==0) {
-                document.getElementById('choixEquipe2').options[opts].disabled=true;
+                document.getElementById('choixEquipe2').options[j].disabled=true;
             }else{
-                document.getElementById('choixEquipe2').options[opts].disabled=false;
+                document.getElementById('choixEquipe2').options[j].disabled=false;
             }
-
         }
         document.getElementById('choixEquipe2').options[input].disabled=true;
+
+        case 2:
+        var input = document.getElementById('choixEquipe2').selectedIndex;
+        var opts = document.getElementById('choixEquipe1').options;
+        for (var opt, j = 0; opt = opts[j]; j++) {
+            if (j==0) {
+                document.getElementById('choixEquipe1').options[j].disabled=true;
+            }else{
+                document.getElementById('choixEquipe1').options[j].disabled=false;
+            }
+        }
+        document.getElementById('choixEquipe1').options[input].disabled=true;
+
+        case 3:
+        var input = document.getElementById('arbitre1').selectedIndex;
+        var opts = document.getElementById('arbitre2').options;
+        for (var opt, j = 0; opt = opts[j]; j++) {
+            if (j==0) {
+                document.getElementById('arbitre2').options[j].disabled=true;
+            }else{
+                document.getElementById('arbitre2').options[j].disabled=false;
+            }
+        }
+        document.getElementById('arbitre2').options[input].disabled=true;
+
+        case 4:
+        var input = document.getElementById('arbitre2').selectedIndex;
+        var opts = document.getElementById('arbitre1').options;
+        for (var opt, j = 0; opt = opts[j]; j++) {
+            if (j==0) {
+                document.getElementById('arbitre1').options[j].disabled=true;
+            }else{
+                document.getElementById('arbitre1').options[j].disabled=false;
+            }
+        }
+        document.getElementById('arbitre1').options[input].disabled=true;
+
+        case 5:
+        var input = document.getElementById('choixEquipe1Mod').selectedIndex;
+        var opts = document.getElementById('choixEquipe2Mod').options;
+        for (var opt, j = 0; opt = opts[j]; j++) {
+            if (j==0) {
+                document.getElementById('choixEquipe2Mod').options[j].disabled=true;
+            }else{
+                document.getElementById('choixEquipe2Mod').options[j].disabled=false;
+            }
+        }
+        document.getElementById('choixEquipe2Mod').options[input].disabled=true;
+
+        case 6:
+        var input = document.getElementById('choixEquipe2Mod').selectedIndex;
+        var opts = document.getElementById('choixEquipe1Mod').options;
+        for (var opt, j = 0; opt = opts[j]; j++) {
+            if (j==0) {
+                document.getElementById('choixEquipe1Mod').options[j].disabled=true;
+            }else{
+                document.getElementById('choixEquipe1Mod').options[j].disabled=false;
+            }
+        }
+        document.getElementById('choixEquipe1Mod').options[input].disabled=true;
+
+        case 7:
+        var input = document.getElementById('choixArbitre1Mod').selectedIndex;
+        var opts = document.getElementById('choixArbitre2Mod').options;
+        for (var opt, j = 0; opt = opts[j]; j++) {
+            if (j==0) {
+                document.getElementById('choixArbitre2Mod').options[j].disabled=true;
+            }else{
+                document.getElementById('choixArbitre2Mod').options[j].disabled=false;
+            }
+        }
+        document.getElementById('choixArbitre2Mod').options[input].disabled=true;
+
+        case 8:
+        var input = document.getElementById('choixArbitre2Mod').selectedIndex;
+        var opts = document.getElementById('choixArbitre1Mod').options;
+        for (var opt, j = 0; opt = opts[j]; j++) {
+            if (j==0) {
+                document.getElementById('choixArbitre1Mod').options[j].disabled=true;
+            }else{
+                document.getElementById('choixArbitre1Mod').options[j].disabled=false;
+            }
+        }
+        document.getElementById('choixArbitre1Mod').options[input].disabled=true;
+    }
+
+    function erreur1(){
+        alert("Erreur : l'arbitre 1 n'est pas valide");
+    }
+
+    function erreur2(){
+        alert("Erreur : l'arbitre 2 n'est pas valide");
     }
 }

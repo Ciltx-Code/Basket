@@ -45,7 +45,7 @@
 				?>
 			</select>
 			
-			<select required name="choixEquipe2" id="choixEquipe2" class ="liste1">
+			<select onchange="disable(2)" required name="choixEquipe2" id="choixEquipe2" class ="liste1">
 				<option disabled selected value="">--Choisir une équipe--</option>
 				<?php 
 				$equipe = getEquipe();
@@ -56,12 +56,13 @@
 					<?php
 				}
 				?>
+				
 			</select><br/><br/>
 
 			<label for="mtn">
 				<strong>Selectionner l'arbitre 1</strong>
 			</label><br/>
-			<select required name="arbitre1" id="arbitre1" class ="liste">
+			<select onchange="disable(3)" required name="arbitre1" id="arbitre1" class ="liste">
 				<option disabled selected value="">--Choisir un arbitre--</option>
 				<?php 
 				$equipe = getArbitre();
@@ -72,13 +73,15 @@
 					<?php
 				}
 				?>
+				
 			</select>
+			<p id="erreur1" class="erreur1">Erreur, cet arbitre ne peut pas être séléctionné</p>
 			<input type="text" name="mtn1" placeholder="montant de l'indemnité">
 
 			<label for="mtn">
 				<strong>Selectionner l'arbitre 2</strong>
 			</label><br/>
-			<select required name="arbitre2" id="arbitre2" class ="liste" >
+			<select onchange="disable(4)" required name="arbitre2" id="arbitre2" class ="liste" >
 				<option disabled selected value=""> --Choisir un arbitre--</option >
 				<?php 
 				$equipe = getArbitre();
@@ -89,7 +92,9 @@
 					<?php
 				}
 				?>
-			</select><br/><br/>
+
+			</select>
+			<p id="erreur2" class="erreur2">Erreur, cet arbitre ne peut pas être séléctionné</p>
 			<input type="text" name="mtn2" placeholder="montant de l'indemnité">
 
 			<input type="submit" name="btn" class="btn" value="enregistrer">

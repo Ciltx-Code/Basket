@@ -241,7 +241,7 @@ nav{
 }
 .form-container {
   max-width: 500px;
-  padding: 20px;
+  padding: 10px 20px 10px 20px;
   background-color: #fff;
   border: 3px solid black;
   border-radius: 50px;
@@ -458,4 +458,12 @@ nav{
 }
 .boutonInscription{
   outline-style: none;
+}
+.erreur1{
+  color: red;
+  display: none;
+}
+.erreur2{
+  color: red;
+  display: none;
 }
