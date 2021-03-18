@@ -90,3 +90,13 @@ function closeFormMatchModif() {
     document.getElementById("popupFormMatchModSuppr").style.display="none";
     document.getElementById("background").style.filter="blur(0px)";
 }
+
+function disable(num){
+    console.log("test");
+    switch(num){
+        case 1:
+        var input = document.getElementById('choixEquipe1').selectedIndex;
+        console.log(input);
+        document.getElementById('choixEquipe2').se
+    }
+}

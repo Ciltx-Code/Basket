@@ -7,8 +7,8 @@
 			<label for="mtn">
 				<strong>Adresse de la salle</strong>
 			</label><br/>
-			<select name="choixSalle" id="choixSalle" class ="liste">
-				<option>--Choisir la salle--</option>
+			<select required name="choixSalle" id="choixSalle" class ="liste">
+				<option disabled selected value="">--Choisir la salle--</option>
 				<?php 
 				$salles = getSalles();
 				while($ligne = $salles -> fetch(PDO::FETCH_OBJ)){
@@ -32,26 +32,26 @@
 			<label for="mtn">
 				<strong>Selectionner l'équipe 2</strong>
 			</label><br/>
-			<select name="choixEquipe1" id="choixEquipe1" class ="liste1">
-				<option>--Choisir une équipe--</option>
+			<select onchange="disable(1)" required name="choixEquipe1" id="choixEquipe1" class ="liste1">
+				<option disabled selected value="">--Choisir une équipe--</option>
 				<?php 
 				$equipe = getEquipe();
 				while($ligne = $equipe -> fetch(PDO::FETCH_OBJ)){
 					?>
-					<option value="<?php echo $ligne->num_equipe ?>"> <?php echo $ligne->nom_equipe ?> </option>
+					<option disable=false value="<?php echo $ligne->num_equipe ?>"> <?php echo $ligne->nom_equipe ?> </option>
 
 					<?php
 				}
 				?>
 			</select>
 			
-			<select name="choixEquipe2" id="choixEquipe2" class ="liste1">
-				<option>--Choisir une équipe--</option>
+			<select required name="choixEquipe2" id="choixEquipe2" class ="liste1">
+				<option disabled selected value="">--Choisir une équipe--</option>
 				<?php 
 				$equipe = getEquipe();
 				while($ligne = $equipe -> fetch(PDO::FETCH_OBJ)){
 					?>
-					<option value="<?php echo $ligne->num_equipe ?>"> <?php echo $ligne->nom_equipe ?> </option>
+					<option disable=false value="<?php echo $ligne->num_equipe ?>"> <?php echo $ligne->nom_equipe ?> </option>
 
 					<?php
 				}
@@ -61,8 +61,8 @@
 			<label for="mtn">
 				<strong>Selectionner l'arbitre 1</strong>
 			</label><br/>
-			<select name="arbitre1" id="arbitre1" class ="liste">
-				<option>--Choisir un arbitre--</option>
+			<select required name="arbitre1" id="arbitre1" class ="liste">
+				<option disabled selected value="">--Choisir un arbitre--</option>
 				<?php 
 				$equipe = getArbitre();
 				while($ligne = $equipe -> fetch(PDO::FETCH_OBJ)){
@@ -78,13 +78,13 @@
 			<label for="mtn">
 				<strong>Selectionner l'arbitre 2</strong>
 			</label><br/>
-			<select name="arbitre2" id="arbitre2" class ="liste">
-				<option>--Choisir un arbitre--</option>
+			<select required name="arbitre2" id="arbitre2" class ="liste" >
+				<option disabled selected value=""> --Choisir un arbitre--</option >
 				<?php 
 				$equipe = getArbitre();
 				while($ligne = $equipe -> fetch(PDO::FETCH_OBJ)){
 					?>
-					<option value="<?php echo $ligne->num_arbitre ?>"> <?php echo $ligne->nom_arbitre ?>  <?php echo $ligne->prenom_arbitre; ?></option>
+					<option> value="<?php echo $ligne->num_arbitre ?>"> <?php echo $ligne->nom_arbitre ?>  <?php echo $ligne->prenom_arbitre; ?></option>
 
 					<?php
 				}
