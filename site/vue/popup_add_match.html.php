@@ -84,7 +84,7 @@
 				$equipe = getArbitre();
 				while($ligne = $equipe -> fetch(PDO::FETCH_OBJ)){
 					?>
-					<option> value="<?php echo $ligne->num_arbitre ?>"> <?php echo $ligne->nom_arbitre ?>  <?php echo $ligne->prenom_arbitre; ?></option>
+					<option value="<?php echo $ligne->num_arbitre ?>"> <?php echo $ligne->nom_arbitre ?>  <?php echo $ligne->prenom_arbitre; ?></option>
 
 					<?php
 				}

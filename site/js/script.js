@@ -97,6 +97,15 @@ function disable(num){
         case 1:
         var input = document.getElementById('choixEquipe1').selectedIndex;
         console.log(input);
-        document.getElementById('choixEquipe2').se
+        var opts = sel.options;
+        for (var opt, j = 0; opt = opts[j]; j++) {
+            if (j==0) {
+                document.getElementById('choixEquipe2').options[opts].disabled=true;
+            }else{
+                document.getElementById('choixEquipe2').options[opts].disabled=false;
+            }
+
+        }
+        document.getElementById('choixEquipe2').options[input].disabled=true;
     }
 }
