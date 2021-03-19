@@ -28,7 +28,7 @@ switch ($btn){
 	modifMatch($_POST['choixSalle'], $_POST['date'], $_POST['heure'], $_POST['choixEquipe1'], $_POST['choixEquipe2'], $_POST['arbitre1'], $_POST['arbitre2'], $_POST['mtn1'], $_POST['mtn2'], $_POST['num']);
 	break;
 
-	case "enregistrer" :
+	case "Enregistrer" :
 	$check1 = check($_POST['arbitre1'], $_POST['choixEquipe1'],$_POST['choixEquipe2']);
 
 	$check2 = check($_POST['arbitre2'], $_POST['choixEquipe1'],$_POST['choixEquipe2']);

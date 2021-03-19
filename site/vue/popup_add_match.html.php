@@ -32,7 +32,7 @@
 			<label for="mtn">
 				<strong>Selectionner l'équipe 2</strong>
 			</label><br/>
-			<select onchange="disable(1)" required name="choixEquipe1" id="choixEquipe1" class ="liste1">
+			<select onchange="disable(1)" required name="choixEquipe1" id="choixEquipe1" class ="listeEquipe1">
 				<option disabled selected value="">--Choisir une équipe--</option>
 				<?php 
 				$equipe = getEquipe();
@@ -45,7 +45,7 @@
 				?>
 			</select>
 			
-			<select onchange="disable(2)" required name="choixEquipe2" id="choixEquipe2" class ="liste1">
+			<select onchange="disable(2)" required name="choixEquipe2" id="choixEquipe2" class ="listeEquipe2">
 				<option disabled selected value="">--Choisir une équipe--</option>
 				<?php 
 				$equipe = getEquipe();
@@ -62,7 +62,7 @@
 			<label for="mtn">
 				<strong>Selectionner l'arbitre 1</strong>
 			</label><br/>
-			<select onchange="disable(3)" required name="arbitre1" id="arbitre1" class ="liste">
+			<select onchange="disable(3), ajax(1)" required name="arbitre1" id="arbitre1" class ="listeArbitre">
 				<option disabled selected value="">--Choisir un arbitre--</option>
 				<?php 
 				$equipe = getArbitre();
@@ -81,7 +81,7 @@
 			<label for="mtn">
 				<strong>Selectionner l'arbitre 2</strong>
 			</label><br/>
-			<select onchange="disable(4)" required name="arbitre2" id="arbitre2" class ="liste" >
+			<select onchange="disable(4), ajax(2)" required name="arbitre2" id="arbitre2" class ="liste" >
 				<option disabled selected value=""> --Choisir un arbitre--</option >
 				<?php 
 				$equipe = getArbitre();
@@ -97,7 +97,7 @@
 			<p id="erreur2" class="erreur2">Erreur, cet arbitre ne peut pas être séléctionné</p>
 			<input type="text" name="mtn2" placeholder="montant de l'indemnité">
 
-			<input type="submit" name="btn" class="btn" value="enregistrer">
+			<input type="submit" name="btn" class="btn" value="Enregistrer">
 			<input type="button" class="btn cancel" value="Annuler" onclick="closeFormMatch()">
 		</form>
 	</div>

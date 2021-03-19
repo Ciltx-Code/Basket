@@ -91,6 +91,45 @@ function closeFormMatchModif() {
     document.getElementById("background").style.filter="blur(0px)";
 }
 
+function ajax(num){
+    switch(num){
+        case 1:
+        var nom = document.getElementById('arbitre1').value;
+        break;
+        case 2 : 
+        var nom = document.getElementById('arbitre2').value;
+    }
+    var equipe1 = $('.listeEquipe1').val();
+    var equipe2 = $('.listeEquipe2').val();
+
+    $.post('modele/AjaxFunction.php', {nom:nom,equipe1:equipe1,equipe2:equipe2},function(donnees){
+        var result = donnees;
+        switch(num){
+            case 1:
+            if(result=='false'){
+                document.getElementById('erreur1').style.display = 'block';
+                document.getElementById('arbitre2').options[document.getElementById('arbitre1').selectedIndex].disabled =false;
+                document.getElementById('arbitre1').selectedIndex = 0;
+
+            }else{
+                document.getElementById('erreur1').style.display = 'none';
+            }
+            break;
+
+            case 2:
+            if(result=='false'){
+                document.getElementById('erreur2').style.display = 'block';
+                document.getElementById('arbitre1').options[document.getElementById('arbitre2').selectedIndex].disabled =false;
+                document.getElementById('arbitre2').selectedIndex = 0;
+            }else{
+                document.getElementById('erreur2').style.display = 'none';
+            }
+        }
+        
+    });
+    return false;
+}
+
 function disable(num){
     switch(num){
         case 1:
@@ -130,11 +169,6 @@ function disable(num){
             }
         }
         document.getElementById('arbitre2').options[input].disabled=true;
-        var arbitre = document.getElementById('arbitre1').selectedIndex;
-        var equipe1 = document.getElementById('choixEquipe1').selectedIndex;
-        var equipe2 = document.getElementById('choixEquipe2').selectedIndex;
-
-        ajaxTest(arbitre, equipe1, equipe2);
         break;
 
         case 4:
@@ -203,22 +237,6 @@ function disable(num){
         break;
     }
 
-    function erreur1(){
-        alert("Erreur : l'arbitre 1 n'est pas valide");
-    }
 
-    function erreur2(){
-        alert("Erreur : l'arbitre 2 n'est pas valide");
-    }
-    function ajaxTest(arbitre1,equipe1,equipe2){
-        alert(cnx().ajax.phpPostSyn("./modele/bd_basket_arbitres.php","check", arbitre1, equipe1, equipe2));
-        var result = cnx().ajax.phpPostSyn("./modele/bd_basket_arbitres.php","check",arbitre1,equipe1,equipe2);
-        //Le cnx est une importation js dans vueMatch.php
 
-        if(result){
-            document.getElementsByName("formAddMatch").submit();
-        } else {
-            document.getElementById("erreur1").style.display="block";
-        }
-    }
 }

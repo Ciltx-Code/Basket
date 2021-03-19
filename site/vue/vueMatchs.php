@@ -6,8 +6,9 @@
 	<style type="text/css">
 		@import url("css/hello.css");
 	</style>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="./js/script.js"></script>
-	<script src="http://jpconnexion.free.fr/2012_06/cnx.js"></script>
+	
 	<link rel="icon" href="../site/images/icone.png" />
 </head>
 <body>
