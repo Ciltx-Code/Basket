@@ -84,6 +84,10 @@ function openFormMatchModif(adresse, date, heure, equipe1, equipe2, arbitre1, ar
     document.getElementById("popupFormMatchModSuppr").style.display="block";
     document.getElementById("background").style.filter="blur(2px)";
     document.getElementById("popupFormMatchModSuppr").style.filter="blur(0px)";
+    disable(5);
+    disable(6);
+    disable(7);
+    disable(8);
 }
 
 function closeFormMatchModif() {

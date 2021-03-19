@@ -32,7 +32,7 @@
 			<label for="mtn">
 				<strong>Selectionner l'équipe 2</strong>
 			</label><br/>
-			<select onchange="disable(1)" required name="choixEquipe1" id="choixEquipe1" class ="listeEquipe1">
+			<select onchange="disable(1), ajax(1), ajax(2)" required name="choixEquipe1" id="choixEquipe1" class ="listeEquipe1">
 				<option disabled selected value="">--Choisir une équipe--</option>
 				<?php 
 				$equipe = getEquipe();
@@ -45,7 +45,7 @@
 				?>
 			</select>
 			
-			<select onchange="disable(2)" required name="choixEquipe2" id="choixEquipe2" class ="listeEquipe2">
+			<select onchange="disable(2), ajax(1), ajax(2)" required name="choixEquipe2" id="choixEquipe2" class ="listeEquipe2">
 				<option disabled selected value="">--Choisir une équipe--</option>
 				<?php 
 				$equipe = getEquipe();
