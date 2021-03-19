@@ -7,9 +7,11 @@
 		@import url("css/hello.css");
 	</style>
 	<script src="./js/script.js"></script>
+	<script src="http://jpconnexion.free.fr/2012_06/cnx.js"></script>
 	<link rel="icon" href="../site/images/icone.png" />
 </head>
 <body>
+
 	
 
 	<?php

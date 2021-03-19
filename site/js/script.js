@@ -104,8 +104,7 @@ function disable(num){
             }
         }
         document.getElementById('choixEquipe2').options[input].disabled=true;
-        alert("test1");
-        ajaxTest(document.getElementById('choixArbitre1').selectedIndex;, document.getElementById('choixEquipe1').selectedIndex;, document.getElementById('choixEquipe2').selectedIndex;)
+        break;
 
         case 2:
         var input = document.getElementById('choixEquipe2').selectedIndex;
@@ -118,6 +117,7 @@ function disable(num){
             }
         }
         document.getElementById('choixEquipe1').options[input].disabled=true;
+        break;
 
         case 3:
         var input = document.getElementById('arbitre1').selectedIndex;
@@ -130,6 +130,12 @@ function disable(num){
             }
         }
         document.getElementById('arbitre2').options[input].disabled=true;
+        var arbitre = document.getElementById('arbitre1').selectedIndex;
+        var equipe1 = document.getElementById('choixEquipe1').selectedIndex;
+        var equipe2 = document.getElementById('choixEquipe2').selectedIndex;
+
+        ajaxTest(arbitre, equipe1, equipe2);
+        break;
 
         case 4:
         var input = document.getElementById('arbitre2').selectedIndex;
@@ -142,6 +148,7 @@ function disable(num){
             }
         }
         document.getElementById('arbitre1').options[input].disabled=true;
+        break;
 
         case 5:
         var input = document.getElementById('choixEquipe1Mod').selectedIndex;
@@ -154,6 +161,7 @@ function disable(num){
             }
         }
         document.getElementById('choixEquipe2Mod').options[input].disabled=true;
+        break;
 
         case 6:
         var input = document.getElementById('choixEquipe2Mod').selectedIndex;
@@ -166,6 +174,7 @@ function disable(num){
             }
         }
         document.getElementById('choixEquipe1Mod').options[input].disabled=true;
+        break;
 
         case 7:
         var input = document.getElementById('choixArbitre1Mod').selectedIndex;
@@ -178,6 +187,7 @@ function disable(num){
             }
         }
         document.getElementById('choixArbitre2Mod').options[input].disabled=true;
+        break;
 
         case 8:
         var input = document.getElementById('choixArbitre2Mod').selectedIndex;
@@ -190,6 +200,7 @@ function disable(num){
             }
         }
         document.getElementById('choixArbitre1Mod').options[input].disabled=true;
+        break;
     }
 
     function erreur1(){
@@ -200,8 +211,10 @@ function disable(num){
         alert("Erreur : l'arbitre 2 n'est pas valide");
     }
     function ajaxTest(arbitre1,equipe1,equipe2){
-        alert("test2");
+        alert(cnx().ajax.phpPostSyn("./modele/bd_basket_arbitres.php","check", arbitre1, equipe1, equipe2));
         var result = cnx().ajax.phpPostSyn("./modele/bd_basket_arbitres.php","check",arbitre1,equipe1,equipe2);
+        //Le cnx est une importation js dans vueMatch.php
+
         if(result){
             document.getElementsByName("formAddMatch").submit();
         } else {
