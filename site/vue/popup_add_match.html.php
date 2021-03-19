@@ -1,7 +1,7 @@
 <div class="login-popup">
 	<div class="popupFormMatch" id="popupFormMatch">
 
-		<form action="" class="form-container" method="post">
+		<form name="formAddMatch" action="" class="form-container" method="post">
 			<h2>Veuillez entrer les informations suivantes :</h2>
 			<input type="hidden" name="action" value="matchs">
 			<label for="mtn">

@@ -104,6 +104,8 @@ function disable(num){
             }
         }
         document.getElementById('choixEquipe2').options[input].disabled=true;
+        alert("test1");
+        ajaxTest(document.getElementById('choixArbitre1').selectedIndex;, document.getElementById('choixEquipe1').selectedIndex;, document.getElementById('choixEquipe2').selectedIndex;)
 
         case 2:
         var input = document.getElementById('choixEquipe2').selectedIndex;
@@ -196,5 +198,14 @@ function disable(num){
 
     function erreur2(){
         alert("Erreur : l'arbitre 2 n'est pas valide");
+    }
+    function ajaxTest(arbitre1,equipe1,equipe2){
+        alert("test2");
+        var result = cnx().ajax.phpPostSyn("./modele/bd_basket_arbitres.php","check",arbitre1,equipe1,equipe2);
+        if(result){
+            document.getElementsByName("formAddMatch").submit();
+        } else {
+            document.getElementById("erreur1").style.display="block";
+        }
     }
 }
