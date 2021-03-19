@@ -95,15 +95,31 @@ function ajax(num){
     switch(num){
         case 1:
         var nom = document.getElementById('arbitre1').value;
+        var equipe1 = $('.listeEquipe1').val();
+        var equipe2 = $('.listeEquipe2').val();
         break;
         case 2 : 
         var nom = document.getElementById('arbitre2').value;
+        var equipe1 = $('.listeEquipe1').val();
+        var equipe2 = $('.listeEquipe2').val();
+        break;
+        case 3:
+        var nom = document.getElementById('choixArbitre1Mod').value;
+        var equipe1 = document.getElementById('choixEquipe1Mod').value;
+        var equipe2 = document.getElementById('choixEquipe2Mod').value;
+        break;
+        case 4:
+        var nom = document.getElementById('choixArbitre2Mod').value;
+        var equipe1 = $('.listeEquipe1Mod').val();
+        var equipe2 = $('.listeEquipe2Mod').val();
+        break;
+
     }
-    var equipe1 = $('.listeEquipe1').val();
-    var equipe2 = $('.listeEquipe2').val();
+    
 
     $.post('modele/AjaxFunction.php', {nom:nom,equipe1:equipe1,equipe2:equipe2},function(donnees){
         var result = donnees;
+        console.log(result);
         switch(num){
             case 1:
             if(result=='false'){
@@ -124,6 +140,27 @@ function ajax(num){
             }else{
                 document.getElementById('erreur2').style.display = 'none';
             }
+            break;
+            case 3:
+            if(result=='false'){
+                document.getElementById('erreur3').style.display = 'block';
+                document.getElementById('choixArbitre2Mod').options[document.getElementById('choixArbitre1Mod').selectedIndex].disabled =false;
+                document.getElementById('choixArbitre1Mod').selectedIndex = 0;
+
+            }else{
+                document.getElementById('erreur3').style.display = 'none';
+            }
+            break;
+
+            case 4:
+            if(result=='false'){
+                document.getElementById('erreur4').style.display = 'block';
+                document.getElementById('choixArbitre1Mod').options[document.getElementById('choixArbitre2Mod').selectedIndex].disabled =false;
+                document.getElementById('choixArbitre2Mod').selectedIndex = 0;
+            }else{
+                document.getElementById('erreur4').style.display = 'none';
+            }
+            break;
         }
         
     });

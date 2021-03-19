@@ -459,11 +459,7 @@ nav{
 .boutonInscription{
   outline-style: none;
 }
-.erreur1{
-  color: red;
-  display: none;
-}
-.erreur2{
+.erreur1, .erreur2, .erreur3, .erreur4{
   color: red;
   display: none;
 }
