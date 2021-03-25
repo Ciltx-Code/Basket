@@ -14,7 +14,7 @@
 			<input type="text" id="mtnindemnite" value="<?php echo $_POST['mtnindemnite']; ?>" placeholder="Montant" name="mtnindemnite" required>
 
 			<input type="submit" name="btn" class="btn" value="Enregistrer">
-			<input type="button" class="btn cancel" value="Annuler" onclick="closeFormCategorie()">
+			<input type="button" class="btn cancel" value="Annuler" onclick="closeForm('popupFormCat')">
 		</form>
 	</div>
 </div>

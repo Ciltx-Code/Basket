@@ -32,7 +32,7 @@
 			<label for="mtn">
 				<strong>Selectionner l'équipe 2</strong>
 			</label><br/>
-			<select onchange="disable('choixEquipe1Mod','choixEquipe2Mod')" required name="choixEquipe1" id="choixEquipe1Mod" class ="listeEquipe1Mod">
+			<select onchange="disable('choixEquipe1Mod','choixEquipe2Mod'), checkChampArbitre('choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod', 'erreur3'), checkClubArbitre('choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod', 'erreur7'), checkChampArbitre('choixArbitre2Mod', 'choixArbitre1Mod', 'listeEquipe2Mod', 'listeEquipe1Mod', 'erreur4'), checkClubArbitre('choixArbitre2Mod', 'choixArbitre1Mod', 'listeEquipe2Mod', 'listeEquipe1Mod', 'erreur8')" required name="choixEquipe1" id="choixEquipe1Mod" class ="listeEquipe1Mod">
 				<option disabled selected value="">--Choisir une équipe--</option>
 				<?php 
 				$equipe = getEquipe();
@@ -44,7 +44,7 @@
 				}
 				?>
 			</select>
-			<select onchange="disable('choixEquipe2Mod','choixEquipe1Mod')" required name="choixEquipe2" id="choixEquipe2Mod" class ="listeEquipe2Mod">
+			<select onchange="disable('choixEquipe2Mod','choixEquipe1Mod'), checkChampArbitre('choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod', 'erreur3'), checkClubArbitre('choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod', 'erreur7'), checkChampArbitre('choixArbitre2Mod', 'choixArbitre1Mod', 'listeEquipe2Mod', 'listeEquipe1Mod', 'erreur4'), checkClubArbitre('choixArbitre2Mod', 'choixArbitre1Mod', 'listeEquipe2Mod', 'listeEquipe1Mod', 'erreur8')" required name="choixEquipe2" id="choixEquipe2Mod" class ="listeEquipe2Mod">
 				<option disabled selected value="">--Choisir une équipe--</option>
 				<?php 
 				$equipe = getEquipe();
@@ -60,7 +60,7 @@
 			<label for="mtn">
 				<strong>Selectionner l'arbitre 1</strong>
 			</label><br/>
-			<select onchange="disable('choixArbitre1Mod','choixArbitre2Mod'), checkChampArbitre(3), checkClubArbitre(3)" required name="arbitre1" id="choixArbitre1Mod" class ="liste">
+			<select onchange="disable('choixArbitre1Mod','choixArbitre2Mod'), checkChampArbitre('choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod', 'erreur3'), checkClubArbitre('choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod', 'erreur7')" required name="arbitre1" id="choixArbitre1Mod" class ="liste">
 				<option disabled selected value="">--Choisir un arbitre--</option>
 				<?php 
 				$equipe = getArbitre();
@@ -79,7 +79,7 @@
 			<label for="mtn">
 				<strong>Selectionner l'arbitre 2</strong>
 			</label><br/>
-			<select onchange="disable('choixArbitre2Mod','choixArbitre1Mod'), checkChampArbitre(4), checkClubArbitre(4)" required name="arbitre2" id="choixArbitre2Mod" class ="liste">
+			<select onchange="disable('choixArbitre2Mod','choixArbitre1Mod'), checkChampArbitre('choixArbitre2Mod', 'choixArbitre1Mod', 'listeEquipe2Mod', 'listeEquipe1Mod', 'erreur4'), checkClubArbitre('choixArbitre2Mod', 'choixArbitre1Mod', 'listeEquipe2Mod', 'listeEquipe1Mod', 'erreur8')" required name="arbitre2" id="choixArbitre2Mod" class ="liste">
 				<option disabled selected value="">--Choisir un arbitre--</option>
 				<?php 
 				$equipe = getArbitre();
@@ -97,7 +97,7 @@
 
 			<input type="submit" name="btn" class="btnmodifsuppr" value="Modifier">
 			<input type="submit" name="btn" class="btnmodifsuppr" value="Supprimer">
-			<input type="button" class="btn cancel" value="Annuler" onclick="closeFormMatchModif()">
+			<input type="button" class="btn cancel" value="Annuler" onclick="closeForm('popupFormMatchModSuppr')">
 		</form>
 	</div>
 </div>

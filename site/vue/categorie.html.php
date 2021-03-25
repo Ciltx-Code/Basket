@@ -25,7 +25,7 @@
 			
 
 			<div class="button_categorie">
-				<button type="submit" id="blur" onclick="openFormCategorie()" class="btn blur">Ajouter une catégorie</button>
+				<button type="submit" id="blur" onclick="openForm('popupFormCat')" class="btn blur">Ajouter une catégorie</button>
 			</div>
             <?php }else{
                 echo "<div class='table_categorie' id='table_categorie'><table> <tr> 

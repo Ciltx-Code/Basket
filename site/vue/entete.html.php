@@ -23,7 +23,7 @@
                     <li><a href="./">Accueil</a></li>
                     <li><a href="?action=matchs">Matchs</a></li>
                     <li><a href="?action=categorie">Catégories</a></li>
-                    <li><a onclick="openForm()">Connexion</a></li>
+                    <li><a onclick="openForm('popupForm')">Connexion</a></li>
                     <?php
                 }
                 ?>

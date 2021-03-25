@@ -16,7 +16,7 @@
 
 			<input type="submit" name="btn" class="btn" value="Modifier">
 			<input type="submit" name="btn" class="btn" value="Supprimer">
-			<input type="button" class="btn cancel" value="Annuler" onclick="closeFormCategorieModif()">
+			<input type="button" class="btn cancel" value="Annuler" onclick="closeForm('popupFormCatModSuppr')">
 		</form>
 	</div>
 </div>

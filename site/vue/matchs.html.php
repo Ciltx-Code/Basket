@@ -46,7 +46,7 @@
         echo "</table></div>";
         ?>
         <div class="button_categorie">
-            <button type="submit" id="blur" onclick="openFormMatch()" class="btn blur">Ajouter un match</button>
+            <button type="submit" id="blur" onclick="openForm('popupFormMatch')" class="btn blur">Ajouter un match</button>
         </div>
     <?php }else{
         echo "<div class='table_categorie' id='table_categorie'>
