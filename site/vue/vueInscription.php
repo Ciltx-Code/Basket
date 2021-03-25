@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <title>FFBB - Gestion de competition</title>
+    <title>FFBB - Inscription</title>
     <style type="text/css">
         @import url("css/hello.css");
     </style>
