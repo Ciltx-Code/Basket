@@ -32,7 +32,7 @@
 			<label for="mtn">
 				<strong>Selectionner l'équipe 2</strong>
 			</label><br/>
-			<select onchange="disable(1), ajax(1), ajax(2)" required name="choixEquipe1" id="choixEquipe1" class ="listeEquipe1">
+			<select onchange="disable('choixEquipe1','choixEquipe2'), checkChampArbitre(1), checkChampArbitre(2)" required name="choixEquipe1" id="choixEquipe1" class ="listeEquipe1">
 				<option disabled selected value="">--Choisir une équipe--</option>
 				<?php 
 				$equipe = getEquipe();
@@ -45,7 +45,7 @@
 				?>
 			</select>
 			
-			<select onchange="disable(2), ajax(1), ajax(2)" required name="choixEquipe2" id="choixEquipe2" class ="listeEquipe2">
+			<select onchange="disable('choixEquipe2','choixEquipe1'), checkChampArbitre(1), checkChampArbitre(2)" required name="choixEquipe2" id="choixEquipe2" class ="listeEquipe2">
 				<option disabled selected value="">--Choisir une équipe--</option>
 				<?php 
 				$equipe = getEquipe();
@@ -62,7 +62,7 @@
 			<label for="mtn">
 				<strong>Selectionner l'arbitre 1</strong>
 			</label><br/>
-			<select onchange="disable(3), ajax(1)" required name="arbitre1" id="arbitre1" class ="listeArbitre">
+			<select onchange="disable('arbitre1','arbitre2'), checkChampArbitre(1), checkClubArbitre(1)" required name="arbitre1" id="arbitre1" class ="listeArbitre">
 				<option disabled selected value="">--Choisir un arbitre--</option>
 				<?php 
 				$equipe = getArbitre();
@@ -75,13 +75,14 @@
 				?>
 				
 			</select>
-			<p id="erreur1" class="erreur1">Erreur, cet arbitre ne peut pas être séléctionné</p>
+			<p id="erreur1" class="erreur1">Erreur, cet arbitre ne peut pas être séléctionné car il joue dans le même championnat que l'une des deux équipes</p>
+			<p id="erreur5" class="erreur5">Erreur, cet arbitre ne peut pas être séléctionné car il appartient a l'un des deux clubs des equipes séléctionnées</p>
 			<input type="text" name="mtn1" placeholder="montant de l'indemnité">
 
 			<label for="mtn">
 				<strong>Selectionner l'arbitre 2</strong>
 			</label><br/>
-			<select onchange="disable(4), ajax(2)" required name="arbitre2" id="arbitre2" class ="liste" >
+			<select onchange="disable('arbitre2','arbitre1'), checkChampArbitre(2), checkClubArbitre(2)" required name="arbitre2" id="arbitre2" class ="liste" >
 				<option disabled selected value=""> --Choisir un arbitre--</option >
 				<?php 
 				$equipe = getArbitre();
@@ -94,7 +95,8 @@
 				?>
 
 			</select>
-			<p id="erreur2" class="erreur2">Erreur, cet arbitre ne peut pas être séléctionné</p>
+			<p id="erreur2" class="erreur2">Erreur, cet arbitre ne peut pas être séléctionné car il joue dans le même championnat que l'une des deux équipes</p>
+			<p id="erreur6" class="erreur6">Erreur, cet arbitre ne peut pas être séléctionné car il appartient a l'un des deux clubs des equipes séléctionnées</p>
 			<input type="text" name="mtn2" placeholder="montant de l'indemnité">
 
 			<input type="submit" name="btn" class="btn" value="Enregistrer">

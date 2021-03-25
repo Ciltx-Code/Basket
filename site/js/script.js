@@ -94,11 +94,11 @@ function openFormMatchModif(adresse, date, heure, equipe1, equipe2, arbitre1, ar
     document.getElementById("background").style.filter="blur(2px)";
     document.getElementById("popupFormMatchModSuppr").style.filter="blur(0px)";
     document.body.style.pointerEvents="none";
-    document.getElementById("popupFormCatModSuppr").style.pointerEvents="all";
-    disable(5);
-    disable(6);
-    disable(7);
-    disable(8);
+    document.getElementById("popupFormMatchModSuppr").style.pointerEvents="all";
+    disable('choixEquipe1Mod','choixEquipe2Mod');
+    disable('choixEquipe2Mod','choixEquipe1Mod');
+    disable('choixArbitre1Mod','choixArbitre2Mod');
+    disable('choixArbitre2Mod','choixArbitre1Mod');
 }
 
 function closeFormMatchModif() {
@@ -107,7 +107,7 @@ function closeFormMatchModif() {
     document.body.style.pointerEvents="all";
 }
 
-function ajax(num){
+function checkChampArbitre(num){
     switch(num){
         case 1:
         var nom = document.getElementById('arbitre1').value;
@@ -135,10 +135,10 @@ function ajax(num){
 
     $.post('modele/AjaxFunction.php', {nom:nom,equipe1:equipe1,equipe2:equipe2},function(donnees){
         var result = donnees;
-        console.log(result);
         switch(num){
             case 1:
             if(result=='false'){
+                disableErrors();
                 document.getElementById('erreur1').style.display = 'block';
                 document.getElementById('arbitre2').options[document.getElementById('arbitre1').selectedIndex].disabled =false;
                 document.getElementById('arbitre1').selectedIndex = 0;
@@ -150,6 +150,7 @@ function ajax(num){
 
             case 2:
             if(result=='false'){
+                disableErrors();
                 document.getElementById('erreur2').style.display = 'block';
                 document.getElementById('arbitre1').options[document.getElementById('arbitre2').selectedIndex].disabled =false;
                 document.getElementById('arbitre2').selectedIndex = 0;
@@ -159,6 +160,7 @@ function ajax(num){
             break;
             case 3:
             if(result=='false'){
+                disableErrors();
                 document.getElementById('erreur3').style.display = 'block';
                 document.getElementById('choixArbitre2Mod').options[document.getElementById('choixArbitre1Mod').selectedIndex].disabled =false;
                 document.getElementById('choixArbitre1Mod').selectedIndex = 0;
@@ -170,6 +172,7 @@ function ajax(num){
 
             case 4:
             if(result=='false'){
+                disableErrors();
                 document.getElementById('erreur4').style.display = 'block';
                 document.getElementById('choixArbitre1Mod').options[document.getElementById('choixArbitre2Mod').selectedIndex].disabled =false;
                 document.getElementById('choixArbitre2Mod').selectedIndex = 0;
@@ -183,186 +186,101 @@ function ajax(num){
     return false;
 }
 
-function ajax2(num){
+function checkClubArbitre(num){
     switch(num){
         case 1:
-            var nom = document.getElementById('arbitre1').value;
-            var equipe1 = $('.listeEquipe1').val();
-            var equipe2 = $('.listeEquipe2').val();
-            break;
+        var nom = document.getElementById('arbitre1').value;
+        var equipe1 = $('.listeEquipe1').val();
+        var equipe2 = $('.listeEquipe2').val();
+        break;
         case 2 :
-            var nom = document.getElementById('arbitre2').value;
-            var equipe1 = $('.listeEquipe1').val();
-            var equipe2 = $('.listeEquipe2').val();
-            break;
+        var nom = document.getElementById('arbitre2').value;
+        var equipe1 = $('.listeEquipe1').val();
+        var equipe2 = $('.listeEquipe2').val();
+        break;
         case 3:
-            var nom = document.getElementById('choixArbitre1Mod').value;
-            var equipe1 = document.getElementById('choixEquipe1Mod').value;
-            var equipe2 = document.getElementById('choixEquipe2Mod').value;
-            break;
+        var nom = document.getElementById('choixArbitre1Mod').value;
+        var equipe1 = document.getElementById('choixEquipe1Mod').value;
+        var equipe2 = document.getElementById('choixEquipe2Mod').value;
+        break;
         case 4:
-            var nom = document.getElementById('choixArbitre2Mod').value;
-            var equipe1 = $('.listeEquipe1Mod').val();
-            var equipe2 = $('.listeEquipe2Mod').val();
-            break;
+        var nom = document.getElementById('choixArbitre2Mod').value;
+        var equipe1 = $('.listeEquipe1Mod').val();
+        var equipe2 = $('.listeEquipe2Mod').val();
+        break;
 
     }
-    $.post('modele/AjaxRègleGestionClubArbitre.php', {nom:nom,equipe1:equipe1,equipe2:equipe2},function(donnees){
+    $.post('modele/AjaxRegleGestionClubArbitre.php', {nom:nom,equipe1:equipe1,equipe2:equipe2},function(donnees){
         var result = donnees;
-        console.log(result);
         switch(num){
             case 1:
-                if(result=='false'){
-                    document.getElementById('erreur1').style.display = 'block';
-                    document.getElementById('arbitre2').options[document.getElementById('arbitre1').selectedIndex].disabled =false;
-                    document.getElementById('arbitre1').selectedIndex = 0;
+            if(result=='false'){
+                disableErrors();
+                document.getElementById('erreur5').style.display = 'block';
+                document.getElementById('arbitre2').options[document.getElementById('arbitre1').selectedIndex].disabled =false;
+                document.getElementById('arbitre1').selectedIndex = 0;
 
-                }else{
-                    document.getElementById('erreur1').style.display = 'none';
-                }
-                break;
+            }else{
+                document.getElementById('erreur5').style.display = 'none';
+            }
+            break;
 
             case 2:
-                if(result=='false'){
-                    document.getElementById('erreur2').style.display = 'block';
-                    document.getElementById('arbitre1').options[document.getElementById('arbitre2').selectedIndex].disabled =false;
-                    document.getElementById('arbitre2').selectedIndex = 0;
-                }else{
-                    document.getElementById('erreur2').style.display = 'none';
-                }
-                break;
+            if(result=='false'){
+                disableErrors();
+                document.getElementById('erreur6').style.display = 'block';
+                document.getElementById('arbitre1').options[document.getElementById('arbitre2').selectedIndex].disabled =false;
+                document.getElementById('arbitre2').selectedIndex = 0;
+            }else{
+                document.getElementById('erreur6').style.display = 'none';
+            }
+            break;
             case 3:
-                if(result=='false'){
-                    document.getElementById('erreur3').style.display = 'block';
-                    document.getElementById('choixArbitre2Mod').options[document.getElementById('choixArbitre1Mod').selectedIndex].disabled =false;
-                    document.getElementById('choixArbitre1Mod').selectedIndex = 0;
+            if(result=='false'){
+                disableErrors();
+                document.getElementById('erreur7').style.display = 'block';
+                document.getElementById('choixArbitre2Mod').options[document.getElementById('choixArbitre1Mod').selectedIndex].disabled =false;
+                document.getElementById('choixArbitre1Mod').selectedIndex = 0;
 
-                }else{
-                    document.getElementById('erreur3').style.display = 'none';
-                }
-                break;
+            }else{
+                document.getElementById('erreur7').style.display = 'none';
+            }
+            break;
 
             case 4:
-                if(result=='false'){
-                    document.getElementById('erreur4').style.display = 'block';
-                    document.getElementById('choixArbitre1Mod').options[document.getElementById('choixArbitre2Mod').selectedIndex].disabled =false;
-                    document.getElementById('choixArbitre2Mod').selectedIndex = 0;
-                }else{
-                    document.getElementById('erreur4').style.display = 'none';
-                }
-                break;
+            if(result=='false'){
+                disableErrors();
+                document.getElementById('erreur8').style.display = 'block';
+                document.getElementById('choixArbitre1Mod').options[document.getElementById('choixArbitre2Mod').selectedIndex].disabled =false;
+                document.getElementById('choixArbitre2Mod').selectedIndex = 0;
+            }else{
+                document.getElementById('erreur8').style.display = 'none';
+            }
+            break;
         }
 
     });
 }
 
-function disable(num){
-    switch(num){
-        case 1:
-        var input = document.getElementById('choixEquipe1').selectedIndex;
-        var opts = document.getElementById('choixEquipe2').options;
-        for (var opt, j = 0; opt = opts[j]; j++) {
-            if (j==0) {
-                document.getElementById('choixEquipe2').options[j].disabled=true;
-            }else{
-                document.getElementById('choixEquipe2').options[j].disabled=false;
-            }
+function disable(equipe1, equipe2){
+    var input = document.getElementById(equipe1).selectedIndex;
+    var opts = document.getElementById(equipe2).options;
+    for (var opt, j = 0; opt = opts[j]; j++) {
+        if (j==0) {
+            document.getElementById(equipe2).options[j].disabled=true;
+        }else{
+            document.getElementById(equipe2).options[j].disabled=false;
         }
-        document.getElementById('choixEquipe2').options[input].disabled=true;
-        break;
-
-        case 2:
-        var input = document.getElementById('choixEquipe2').selectedIndex;
-        var opts = document.getElementById('choixEquipe1').options;
-        for (var opt, j = 0; opt = opts[j]; j++) {
-            if (j==0) {
-                document.getElementById('choixEquipe1').options[j].disabled=true;
-            }else{
-                document.getElementById('choixEquipe1').options[j].disabled=false;
-            }
-        }
-        document.getElementById('choixEquipe1').options[input].disabled=true;
-        break;
-
-        case 3:
-        var input = document.getElementById('arbitre1').selectedIndex;
-        var opts = document.getElementById('arbitre2').options;
-        for (var opt, j = 0; opt = opts[j]; j++) {
-            if (j==0) {
-                document.getElementById('arbitre2').options[j].disabled=true;
-            }else{
-                document.getElementById('arbitre2').options[j].disabled=false;
-            }
-        }
-        document.getElementById('arbitre2').options[input].disabled=true;
-        break;
-
-        case 4:
-        var input = document.getElementById('arbitre2').selectedIndex;
-        var opts = document.getElementById('arbitre1').options;
-        for (var opt, j = 0; opt = opts[j]; j++) {
-            if (j==0) {
-                document.getElementById('arbitre1').options[j].disabled=true;
-            }else{
-                document.getElementById('arbitre1').options[j].disabled=false;
-            }
-        }
-        document.getElementById('arbitre1').options[input].disabled=true;
-        break;
-
-        case 5:
-        var input = document.getElementById('choixEquipe1Mod').selectedIndex;
-        var opts = document.getElementById('choixEquipe2Mod').options;
-        for (var opt, j = 0; opt = opts[j]; j++) {
-            if (j==0) {
-                document.getElementById('choixEquipe2Mod').options[j].disabled=true;
-            }else{
-                document.getElementById('choixEquipe2Mod').options[j].disabled=false;
-            }
-        }
-        document.getElementById('choixEquipe2Mod').options[input].disabled=true;
-        break;
-
-        case 6:
-        var input = document.getElementById('choixEquipe2Mod').selectedIndex;
-        var opts = document.getElementById('choixEquipe1Mod').options;
-        for (var opt, j = 0; opt = opts[j]; j++) {
-            if (j==0) {
-                document.getElementById('choixEquipe1Mod').options[j].disabled=true;
-            }else{
-                document.getElementById('choixEquipe1Mod').options[j].disabled=false;
-            }
-        }
-        document.getElementById('choixEquipe1Mod').options[input].disabled=true;
-        break;
-
-        case 7:
-        var input = document.getElementById('choixArbitre1Mod').selectedIndex;
-        var opts = document.getElementById('choixArbitre2Mod').options;
-        for (var opt, j = 0; opt = opts[j]; j++) {
-            if (j==0) {
-                document.getElementById('choixArbitre2Mod').options[j].disabled=true;
-            }else{
-                document.getElementById('choixArbitre2Mod').options[j].disabled=false;
-            }
-        }
-        document.getElementById('choixArbitre2Mod').options[input].disabled=true;
-        break;
-
-        case 8:
-        var input = document.getElementById('choixArbitre2Mod').selectedIndex;
-        var opts = document.getElementById('choixArbitre1Mod').options;
-        for (var opt, j = 0; opt = opts[j]; j++) {
-            if (j==0) {
-                document.getElementById('choixArbitre1Mod').options[j].disabled=true;
-            }else{
-                document.getElementById('choixArbitre1Mod').options[j].disabled=false;
-            }
-        }
-        document.getElementById('choixArbitre1Mod').options[input].disabled=true;
-        break;
+        
     }
+    document.getElementById(equipe2).options[input].disabled=true;
+}
 
-
-
+function disableErrors(){
+    document.getElementById('erreur1').style.display = 'none';
+    document.getElementById('erreur2').style.display = 'none';
+    document.getElementById('erreur3').style.display = 'none';
+    document.getElementById('erreur4').style.display = 'none';
+    document.getElementById('erreur5').style.display = 'none';
+    document.getElementById('erreur6').style.display = 'none';
 }
