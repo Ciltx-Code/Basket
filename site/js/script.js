@@ -21,11 +21,14 @@ function openFormMatch(){
     document.getElementById("popupFormMatch").style.display="block";
     document.getElementById("background").style.filter="blur(2px)";
     document.getElementById("popupFormMatch").style.filter="blur(0px)";
+    document.body.style.pointerEvents="none";
+    document.getElementById("popupFormMatch").style.pointerEvents="all";
 }
 
 function closeFormMatch(){
     document.getElementById("popupFormMatch").style.display="none";
     document.getElementById("background").style.filter="blur(0px)";
+    document.body.style.pointerEvents="all";
 }
 
 
@@ -33,12 +36,15 @@ function openFormCategorie() {
     document.getElementById("popupFormCat").style.display="block";
     document.getElementById("background").style.filter="blur(2px)";
     document.getElementById("popupFormCat").style.filter="blur(0px)";
+    document.body.style.pointerEvents="none";
+    document.getElementById("popupFormCat").style.pointerEvents="all";
 
 }
 
 function closeFormCategorie() {
     document.getElementById("popupFormCat").style.display="none";
     document.getElementById("background").style.filter="blur(0px)";
+    document.body.style.pointerEvents="all";
 }
 
 function openFormCategorieModif(nom, mtn) {
@@ -55,11 +61,14 @@ function openFormCategorieModif(nom, mtn) {
     document.getElementById("popupFormCatModSuppr").style.display="block";
     document.getElementById("background").style.filter="blur(2px)";
     document.getElementById("popupFormCatModSuppr").style.filter="blur(0px)";
+    document.body.style.pointerEvents="none";
+    document.getElementById("popupFormCatModSuppr").style.pointerEvents="all";
 
 }
 function closeFormCategorieModif() {
     document.getElementById("popupFormCatModSuppr").style.display="none";
     document.getElementById("background").style.filter="blur(0px)";
+    document.body.style.pointerEvents="all";
 }
 
 function Afficher() {
@@ -169,6 +178,79 @@ function ajax(num){
         
     });
     return false;
+}
+
+function ajax2(num){
+    switch(num){
+        case 1:
+            var nom = document.getElementById('arbitre1').value;
+            var equipe1 = $('.listeEquipe1').val();
+            var equipe2 = $('.listeEquipe2').val();
+            break;
+        case 2 :
+            var nom = document.getElementById('arbitre2').value;
+            var equipe1 = $('.listeEquipe1').val();
+            var equipe2 = $('.listeEquipe2').val();
+            break;
+        case 3:
+            var nom = document.getElementById('choixArbitre1Mod').value;
+            var equipe1 = document.getElementById('choixEquipe1Mod').value;
+            var equipe2 = document.getElementById('choixEquipe2Mod').value;
+            break;
+        case 4:
+            var nom = document.getElementById('choixArbitre2Mod').value;
+            var equipe1 = $('.listeEquipe1Mod').val();
+            var equipe2 = $('.listeEquipe2Mod').val();
+            break;
+
+    }
+    $.post('modele/AjaxRègleGestionClubArbitre.php', {nom:nom,equipe1:equipe1,equipe2:equipe2},function(donnees){
+        var result = donnees;
+        console.log(result);
+        switch(num){
+            case 1:
+                if(result=='false'){
+                    document.getElementById('erreur1').style.display = 'block';
+                    document.getElementById('arbitre2').options[document.getElementById('arbitre1').selectedIndex].disabled =false;
+                    document.getElementById('arbitre1').selectedIndex = 0;
+
+                }else{
+                    document.getElementById('erreur1').style.display = 'none';
+                }
+                break;
+
+            case 2:
+                if(result=='false'){
+                    document.getElementById('erreur2').style.display = 'block';
+                    document.getElementById('arbitre1').options[document.getElementById('arbitre2').selectedIndex].disabled =false;
+                    document.getElementById('arbitre2').selectedIndex = 0;
+                }else{
+                    document.getElementById('erreur2').style.display = 'none';
+                }
+                break;
+            case 3:
+                if(result=='false'){
+                    document.getElementById('erreur3').style.display = 'block';
+                    document.getElementById('choixArbitre2Mod').options[document.getElementById('choixArbitre1Mod').selectedIndex].disabled =false;
+                    document.getElementById('choixArbitre1Mod').selectedIndex = 0;
+
+                }else{
+                    document.getElementById('erreur3').style.display = 'none';
+                }
+                break;
+
+            case 4:
+                if(result=='false'){
+                    document.getElementById('erreur4').style.display = 'block';
+                    document.getElementById('choixArbitre1Mod').options[document.getElementById('choixArbitre2Mod').selectedIndex].disabled =false;
+                    document.getElementById('choixArbitre2Mod').selectedIndex = 0;
+                }else{
+                    document.getElementById('erreur4').style.display = 'none';
+                }
+                break;
+        }
+
+    });
 }
 
 function disable(num){
