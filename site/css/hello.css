@@ -71,6 +71,7 @@ nav{
 }
 .entete{
   display: inline-flex;
+  height: 112.4px;
 }
 .entete .logo{
   width: 20%;
