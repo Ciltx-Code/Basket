@@ -65,43 +65,51 @@ function openFormMatchModif(adresse, date, heure, equipe1, equipe2, arbitre1, ar
 }
 
 //Check Championnat et Club des Arbitres
-function checkChampArbitre(Arb1, Arb2, Eq1, Eq2, Err){
-    var nom = document.getElementById(Arb1).value;
+
+function checkGlobal(Arb1, Arb2, Eq1, Eq2, Err){
+    $.post('modele/CountLineArbitre.php',function(donnees){
+        var nb = parseInt(donnees);
+
+        for (var i = 1; i <=nb; i++) {
+            document.getElementById(Arb1).options[i].disabled=false;
+            checkChampArbitre(Arb1, Arb2, Eq1, Eq2, Err,i);
+            checkClubArbitre(Arb1, Arb2, Eq1, Eq2, Err,i);
+        }
+    });
+}
+
+function checkChampArbitre(Arb1, Arb2, Eq1, Eq2, Err,i){
+    var nom = i;
     var equipe1 = $("." + Eq1).val();
     var equipe2 = $("." + Eq2).val();
     $.post('modele/AjaxFunction.php', {nom:nom,equipe1:equipe1,equipe2:equipe2},function(donnees){
         var result = donnees;
         if(result=='false'){
-            disableErrors();
-            document.getElementById(Err).style.display = 'block';
-            document.getElementById(Arb2).options[document.getElementById(Arb1).selectedIndex].disabled =false;
-            document.getElementById(Arb1).selectedIndex = 0;
+            //document.getElementById(Arb2).options[document.getElementById(Arb1).options[i].disabled =true;
+            document.getElementById(Arb1).options[i].disabled=true;
+            document.getElementById(Arb2).options[i].disabled=true;
+            //document.getElementById(Arb1).options[document.getElementById(Arb2).options[i].disabled =true;
 
-        }else{
-            document.getElementById(Err).style.display = 'none';
         }
 
     });
 }
 
 
-function checkClubArbitre(Arb1, Arb2, Eq1, Eq2, Err){
+function checkClubArbitre(Arb1, Arb2, Eq1, Eq2, Err,i){
 
-    var nom = document.getElementById(Arb1).value;
+    var nom = i;
     var equipe1 = $('.' + Eq1).val();
     var equipe2 = $('.' + Eq2).val();
     $.post('modele/AjaxRegleGestionClubArbitre.php', {nom:nom,equipe1:equipe1,equipe2:equipe2},function(donnees){
         var result = donnees;
         if(result=='false'){
-            disableErrors();
-            document.getElementById(Err).style.display = 'block';
-            document.getElementById(Arb2).options[document.getElementById(Arb1).selectedIndex].disabled =false;
-            document.getElementById(Arb1).selectedIndex = 0;
+            //document.getElementById(Arb2).options[document.getElementById(Arb1).selectedIndex].disabled =true;
+            //document.getElementById(Arb1).options[document.getElementById(Arb2).selectedIndex].disabled =true;
+            document.getElementById(Arb1).options[i].disabled=true;
+            document.getElementById(Arb2).options[i].disabled=true;
 
-        }else{
-            document.getElementById(Err).style.display = 'none';
         }
-
     });
 }
 
@@ -117,13 +125,4 @@ function disable(equipe1, equipe2){
         
     }
     document.getElementById(equipe2).options[input].disabled=true;
-}
-
-function disableErrors(){
-    document.getElementById('erreur1').style.display = 'none';
-    document.getElementById('erreur2').style.display = 'none';
-    document.getElementById('erreur3').style.display = 'none';
-    document.getElementById('erreur4').style.display = 'none';
-    document.getElementById('erreur5').style.display = 'none';
-    document.getElementById('erreur6').style.display = 'none';
 }
