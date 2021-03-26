@@ -320,7 +320,14 @@ nav{
   width: 60%;
   background: linear-gradient(to bottom right, #C645BB, #4AA9FE);
 }
-
+.arbitresNotCo{
+  display: block;
+  margin: auto;
+  border-radius: 25% 25% 25% 25%;
+  padding:10px 15px 10px 15px;
+  width: 30%;
+  background: linear-gradient(to bottom right, #C645BB, #4AA9FE);
+}
 /*==========Categorie==========*/
 
 .button_categorie{
@@ -399,6 +406,7 @@ nav{
 #blur2{
   filter: blur(0px);
 }
+
 /*=============================*/
 
 .lienInscription a{

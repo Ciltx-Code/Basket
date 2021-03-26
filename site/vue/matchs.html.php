@@ -1,7 +1,7 @@
-<div class="arbitres">
+
     <?php
     if(isset($_SESSION["id"])){
-        echo "<div class='table_categorie' id='table_categorie'>
+        echo "<div class='arbitres'><div class='table_categorie' id='table_categorie'>
         <table> 
         <tr>
         <td></td> 
@@ -48,8 +48,9 @@
         <div class="button_categorie">
             <button type="submit" id="blur" onclick="openForm('popupFormMatch')" class="btn blur">Ajouter un match</button>
         </div>
+        </div>
     <?php }else{
-        echo "<div class='table_categorie' id='table_categorie'>
+        echo "<div class='arbitresNotCo'><div class='table_categorie backgroundCatNotConnect' id='table_categorie'>
         <table>
         <tr>
         <td>Adresse de la salle</td>
@@ -67,8 +68,7 @@
             echo "<td>$ligne->heure_match</td>";
             echo "</tr>";
         }
-        echo "</table></div>";
+        echo "</table></div></div>";
     }
 
     ?>
-</div>
