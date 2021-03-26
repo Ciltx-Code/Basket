@@ -85,6 +85,12 @@ function checkChampArbitre(Arb1, Arb2, Eq1, Eq2, Err,i){
     $.post('modele/AjaxFunction.php', {nom:nom,equipe1:equipe1,equipe2:equipe2},function(donnees){
         var result = donnees;
         if(result=='false'){
+            if(i == document.getElementById(Arb1).selectedIndex || i == document.getElementById(Arb2).selectedIndex){
+                document.getElementById(Arb1).selectedIndex = 0;
+            }
+            if(i == document.getElementById(Arb2).selectedIndex){
+                document.getElementById(Arb2).selectedIndex = 0;
+            }
             //document.getElementById(Arb2).options[document.getElementById(Arb1).options[i].disabled =true;
             document.getElementById(Arb1).options[i].disabled=true;
             document.getElementById(Arb2).options[i].disabled=true;
@@ -104,6 +110,12 @@ function checkClubArbitre(Arb1, Arb2, Eq1, Eq2, Err,i){
     $.post('modele/AjaxRegleGestionClubArbitre.php', {nom:nom,equipe1:equipe1,equipe2:equipe2},function(donnees){
         var result = donnees;
         if(result=='false'){
+            if(i == document.getElementById(Arb1).selectedIndex){
+                document.getElementById(Arb1).selectedIndex = 0;
+            }
+            if(i == document.getElementById(Arb2).selectedIndex){
+                document.getElementById(Arb2).selectedIndex = 0;
+            }
             //document.getElementById(Arb2).options[document.getElementById(Arb1).selectedIndex].disabled =true;
             //document.getElementById(Arb1).options[document.getElementById(Arb2).selectedIndex].disabled =true;
             document.getElementById(Arb1).options[i].disabled=true;
