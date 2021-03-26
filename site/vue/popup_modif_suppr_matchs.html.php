@@ -32,7 +32,7 @@
 			<label for="mtn">
 				<strong>Selectionner l'équipe 2</strong>
 			</label><br/>
-			<select onchange="disable('choixEquipe1Mod','choixEquipe2Mod'), checkChampArbitre('choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod', 'erreur3'), checkClubArbitre('choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod', 'erreur7'), checkChampArbitre('choixArbitre2Mod', 'choixArbitre1Mod', 'listeEquipe2Mod', 'listeEquipe1Mod', 'erreur4'), checkClubArbitre('choixArbitre2Mod', 'choixArbitre1Mod', 'listeEquipe2Mod', 'listeEquipe1Mod', 'erreur8')" required name="choixEquipe1" id="choixEquipe1Mod" class ="listeEquipe1Mod">
+			<select onchange="disable('choixEquipe1Mod','choixEquipe2Mod','choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod')" required name="choixEquipe1" id="choixEquipe1Mod" class ="listeEquipe1Mod">
 				<option disabled selected value="">--Choisir une équipe--</option>
 				<?php 
 				$equipe = getEquipe();
@@ -44,7 +44,7 @@
 				}
 				?>
 			</select>
-			<select onchange="disable('choixEquipe2Mod','choixEquipe1Mod'), checkChampArbitre('choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod', 'erreur3'), checkClubArbitre('choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod', 'erreur7'), checkChampArbitre('choixArbitre2Mod', 'choixArbitre1Mod', 'listeEquipe2Mod', 'listeEquipe1Mod', 'erreur4'), checkClubArbitre('choixArbitre2Mod', 'choixArbitre1Mod', 'listeEquipe2Mod', 'listeEquipe1Mod', 'erreur8')" required name="choixEquipe2" id="choixEquipe2Mod" class ="listeEquipe2Mod">
+			<select onchange="disable('choixEquipe2Mod','choixEquipe1Mod','choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod')" required name="choixEquipe2" id="choixEquipe2Mod" class ="listeEquipe2Mod">
 				<option disabled selected value="">--Choisir une équipe--</option>
 				<?php 
 				$equipe = getEquipe();
@@ -60,7 +60,7 @@
 			<label for="mtn">
 				<strong>Selectionner l'arbitre 1</strong>
 			</label><br/>
-			<select onchange="disable('choixArbitre1Mod','choixArbitre2Mod'), checkChampArbitre('choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod', 'erreur3'), checkClubArbitre('choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod', 'erreur7')" required name="arbitre1" id="choixArbitre1Mod" class ="liste">
+			<select onchange="disable('choixArbitre1Mod','choixArbitre2Mod','choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod')" required name="arbitre1" id="choixArbitre1Mod" class ="liste">
 				<option disabled selected value="">--Choisir un arbitre--</option>
 				<?php 
 				$equipe = getArbitre();
@@ -72,14 +72,12 @@
 				}
 				?>
 			</select>
-			<p id="erreur3" class="erreur3">Erreur, cet arbitre ne peut pas être séléctionné car il joue dans le même championnat que l'une des deux équipes</p>
-			<p id="erreur7" class="erreur7">Erreur, cet arbitre ne peut pas être séléctionné car il appartient a l'un des deux clubs des equipes séléctionnées</p>
 			<input type="text" name="mtn1" value="" id="mtn1Mod" placeholder="montant de l'indemnité">
 
 			<label for="mtn">
 				<strong>Selectionner l'arbitre 2</strong>
 			</label><br/>
-			<select onchange="disable('choixArbitre2Mod','choixArbitre1Mod'), checkChampArbitre('choixArbitre2Mod', 'choixArbitre1Mod', 'listeEquipe2Mod', 'listeEquipe1Mod', 'erreur4'), checkClubArbitre('choixArbitre2Mod', 'choixArbitre1Mod', 'listeEquipe2Mod', 'listeEquipe1Mod', 'erreur8')" required name="arbitre2" id="choixArbitre2Mod" class ="liste">
+			<select onchange="disable('choixArbitre2Mod','choixArbitre1Mod','choixArbitre2Mod', 'choixArbitre1Mod', 'listeEquipe2Mod', 'listeEquipe1Mod')" required name="arbitre2" id="choixArbitre2Mod" class ="liste">
 				<option disabled selected value="">--Choisir un arbitre--</option>
 				<?php 
 				$equipe = getArbitre();
@@ -91,8 +89,6 @@
 				}
 				?>
 			</select><br/><br/>
-			<p id="erreur4" class="erreur4">Erreur, cet arbitre ne peut pas être séléctionné car il joue dans le même championnat que l'une des deux équipes</p>
-			<p id="erreur8" class="erreur8">Erreur, cet arbitre ne peut pas être séléctionné car il appartient a l'un des deux clubs des equipes séléctionnées</p>
 			<input type="text" name="mtn2" value="" id="mtn2Mod" placeholder="montant de l'indemnité">
 
 			<input type="submit" name="btn" class="btnmodifsuppr" value="Modifier">

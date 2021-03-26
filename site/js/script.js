@@ -58,27 +58,27 @@ function openFormMatchModif(adresse, date, heure, equipe1, equipe2, arbitre1, ar
     document.getElementById("popupFormMatchModSuppr").style.filter="blur(0px)";
     document.body.style.pointerEvents="none";
     document.getElementById("popupFormMatchModSuppr").style.pointerEvents="all";
-    disable('choixEquipe1Mod','choixEquipe2Mod');
-    disable('choixEquipe2Mod','choixEquipe1Mod');
-    disable('choixArbitre1Mod','choixArbitre2Mod');
-    disable('choixArbitre2Mod','choixArbitre1Mod');
+    disable('choixEquipe1Mod','choixEquipe2Mod','choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod');
+    disable('choixEquipe2Mod','choixEquipe1Mod','choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod');
+    disable('choixArbitre1Mod','choixArbitre2Mod','choixArbitre1Mod', 'choixArbitre2Mod', 'listeEquipe1Mod', 'listeEquipe2Mod');
+    disable('choixArbitre2Mod','choixArbitre1Mod','choixArbitre2Mod', 'choixArbitre1Mod', 'listeEquipe2Mod', 'listeEquipe1Mod');
 }
 
 //Check Championnat et Club des Arbitres
 
-function checkGlobal(Arb1, Arb2, Eq1, Eq2, Err){
+function checkGlobal(Arb1, Arb2, Eq1, Eq2){
     $.post('modele/CountLineArbitre.php',function(donnees){
         var nb = parseInt(donnees);
 
         for (var i = 1; i <=nb; i++) {
             document.getElementById(Arb1).options[i].disabled=false;
-            checkChampArbitre(Arb1, Arb2, Eq1, Eq2, Err,i);
-            checkClubArbitre(Arb1, Arb2, Eq1, Eq2, Err,i);
+            checkChampArbitre(Arb1, Arb2, Eq1, Eq2,i);
+            checkClubArbitre(Arb1, Arb2, Eq1, Eq2,i);
         }
     });
 }
 
-function checkChampArbitre(Arb1, Arb2, Eq1, Eq2, Err,i){
+function checkChampArbitre(Arb1, Arb2, Eq1, Eq2,i){
     var nom = i;
     var equipe1 = $("." + Eq1).val();
     var equipe2 = $("." + Eq2).val();
@@ -102,7 +102,7 @@ function checkChampArbitre(Arb1, Arb2, Eq1, Eq2, Err,i){
 }
 
 
-function checkClubArbitre(Arb1, Arb2, Eq1, Eq2, Err,i){
+function checkClubArbitre(Arb1, Arb2, Eq1, Eq2,i){
 
     var nom = i;
     var equipe1 = $('.' + Eq1).val();
@@ -125,7 +125,7 @@ function checkClubArbitre(Arb1, Arb2, Eq1, Eq2, Err,i){
     });
 }
 
-function disable(equipe1, equipe2){
+function disable(equipe1, equipe2,Arb1, Arb2, Eq1, Eq2){
     var input = document.getElementById(equipe1).selectedIndex;
     var opts = document.getElementById(equipe2).options;
     for (var opt, j = 0; opt = opts[j]; j++) {
@@ -136,5 +136,6 @@ function disable(equipe1, equipe2){
         }
         
     }
+    checkGlobal(Arb1, Arb2, Eq1, Eq2);
     document.getElementById(equipe2).options[input].disabled=true;
 }
